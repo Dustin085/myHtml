@@ -1,0 +1,39 @@
+/* 標籤區 */
+body {
+    /* 預設margin: 8px; */
+    margin: 0;
+    background-image: url(./images/bg.jpg);
+    font-size: 12px;
+}
+
+img {
+    display: block;
+}
+
+/* class區 */
+.box {
+    width: 1000px;
+    margin: 0 auto;
+    /* 間距自動(auto)偵測必須搭配寬度(width) */
+}
+
+.btn {
+    float: left;
+    /* 用float: left浮動區塊(自動抓內容尺寸), 覆蓋原來的block */
+}
+
+h1 {
+    font-size: 2rem;
+    /* 會抓根元素的size, (抓瀏覽器的設定) */
+}
+
+h2 {
+    font-size: 150%;
+    /* 1.5em = 150% */
+    /* em跟%都是抓父元素的size */
+}
+
+p {
+    font-size: 1em;
+    /* <p>預設font-size: 1em */
+}
