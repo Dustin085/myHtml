@@ -3,11 +3,16 @@ body {
     /* 預設margin: 8px; */
     margin: 0;
     background-image: url(./images/bg.jpg);
-    font-size: 12px;
+    /* font-size: 12px; */
 }
 
 img {
     display: block;
+}
+
+iframe {
+    display: block;
+    margin: 0 auto;
 }
 
 /* class區 */
@@ -20,6 +25,27 @@ img {
 .btn {
     float: left;
     /* 用float: left浮動區塊(自動抓內容尺寸), 覆蓋原來的block */
+}
+
+.col {
+    font-size: 14px;
+    float: left;
+    width: 446px;
+    /* 文字會自動延展，需要自行設定尺寸 */
+    border: 2px dotted #4f2f52;
+    margin: 10px;
+    /* margin: 上 右 下 左 */
+    padding: 15px;
+    /* 由內而外: content => padding => border => margin */
+}
+
+.col span {
+    color: red;
+    /* <span>主要用來修改裝飾，不會強調 */
+}
+
+hr {
+    border: #4f2f52 solid 0.1px;
 }
 
 h1 {
@@ -36,4 +62,18 @@ h2 {
 p {
     font-size: 1em;
     /* <p>預設font-size: 1em */
+}
+
+address {
+    font-style: normal;
+}
+
+.footer {
+    clear: both;
+    width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+    /* 文字置中 */
+    border-top: 2px dotted #4f2f52;
+    padding: 20px 0;
 }
