@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-hant-TW">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>單一元素空間不足分配收縮比例</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		article {
+			background-color: #bbb;
+			width: 400px;
+			height: 220px;
+			display: flex;
+			justify-content: flex-start;
+			/* 主軸對齊 */
+			/* align-items: center; */
+			/* 副軸對齊 */
+			/* align-content: flex-end; */
+			/* 多行副軸對齊 */
+			/* flex-wrap: wrap; */
+			/* 換行 */
+		}
+
+		article div {
+			width: 150px;
+		}
+
+		article div:nth-child(1) {
+			background-color: rgb(132, 132, 195);
+		}
+
+		article div:nth-child(2) {
+			background-color: rgb(146, 205, 166);
+		}
+
+		article div:nth-child(3) {
+			background-color: rgb(209, 135, 135);
+			/* flex-grow => 減去內容(ex.下面的aa, bb, cc)之後等寬 */
+			/* flex => 區域寬度均分 */
+		}
+	</style>
+</head>
+
+<body>
+	<article>
+		<div>aaaaaaaaaa</div>
+		<div>bb</div>
+		<div>cc</div>
+	</article>
+
+
+
+</body>
+
+</html>

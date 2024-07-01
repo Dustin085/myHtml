@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>position</title>
+<style>
+body{
+	margin: 0;
+}
+div{
+	opacity: .75;
+	height: 300px;
+	width: 300px;
+}
+#box {
+	background-color:blueviolet;
+	font-size: 5rem;
+	text-align: center;
+	line-height: 300px;
+	color: white;
+}
+#box1 {
+	background: #F2B035 url(1.svg);
+	position: fixed;
+	left:30px;
+	top: 30px;
+}
+#box2 {
+	background: #15959F url(2.svg);
+	position: fixed;
+	left: 40px;
+	top: 40px;
+}
+#box3 {
+	background: #540032 url(3.svg);
+	position: fixed;
+	left: 50px;
+	top: 50px;
+}
+</style>
+</head>
+
+<body>
+<div id="box">box</div>
+<div id="box1">
+    <div id="box2"></div>
+</div>
+<div id="box3"></div>
+
+</body>
+</html>
