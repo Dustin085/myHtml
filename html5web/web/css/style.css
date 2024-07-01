@@ -1,0 +1,136 @@
+@charset "UTF-8";
+
+/* 設定編碼，UTF-8一定要在行數1 */
+/* 重置所有標籤的樣式 */
+* {
+    margin: 0;
+    padding: 0;
+    /* 不累加內距padding與邊框border */
+    box-sizing: border-box;
+}
+
+/* 重置字體 */
+body {
+    font-family:
+        /*西文*/
+        -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica, Arial,
+        /*中文*/
+        "蘋方-繁", "PingFang TC", "黑體-繁", "Heiti TC", "微軟正黑體", "Microsoft JhengHei", "Noto Sans TC", sans-serif;
+    font-size: 100%;
+    line-height: 1.5;
+    background-color: rgb(175, 207, 191);
+}
+
+/* 重置標題 */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
+}
+
+/* 重置列表 */
+ul,
+ol {
+    list-style: none;
+}
+
+/* 重置圖片 */
+img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+/* 重置連接 */
+a {
+    /* 將預設inline改成block */
+    display: block;
+    text-decoration: none;
+}
+
+/* 頁首區 */
+#topbar {
+    /* 預設主軸為水平 */
+    display: flex;
+    /* 主軸(水平)均分，貼齊頭尾 */
+    justify-content: space-between;
+    /* 副軸(垂直)置中 */
+    align-items: center;
+    padding: 30px;
+}
+
+.logo {
+    width: 65px;
+}
+
+.navigation {
+    display: flex;
+    /* 主軸變成垂直 */
+    flex-direction: column;
+    /* 副軸(水平)置底 */
+    align-items: flex-end;
+}
+
+.navigation .icon {
+    display: flex;
+}
+
+.navigation .icon a {
+    width: 35px;
+    height: 35px;
+    /* 向左推間距 */
+    margin-left: 10px;
+    /* transition預設all(所有適用的屬性)，最常用的秒數是0.35s */
+    transition: .35s ease-in-out;
+}
+
+.icon-fb {
+    /* 只有svg圖會自動等比例縮放，其他圖檔會是原始尺寸 */
+    background-image: url(../images/icon-fb.svg);
+    /* 使用background-image來做:hover圖樣轉換，比使用js撰寫的效能更好 */
+    /* background-size: 100%; 若是svg以外的圖檔則需要自行設定尺寸 */
+    /* 背景顯示在content + padding */
+}
+
+.icon-fb:hover {
+    background-image: url(../images/icon-fb-hover.svg);
+}
+
+.icon-ig {
+    background-image: url(../images/icon-ig.svg);
+}
+
+.icon-ig:hover {
+    background-image: url(../images/icon-ig-hover.svg);
+}
+
+.icon-line {
+    background-image: url(../images/icon-line.svg);
+}
+
+.icon-line:hover {
+    background-image: url(../images/icon-line-hover.svg);
+}
+
+.navigation .menu {
+    display: flex;
+    /* 控制父層外距 */
+    margin: 15px 0;
+}
+
+.navigation .menu a {
+    color: #222;
+    /* 控制子層外距 */
+    margin: 0 10px;
+    /* 預留2px給:hover的transition效果，透明的2px border */
+    border-bottom: solid 2px transparent;
+    transition: .35s ease-in-out;
+}
+
+.navigation .menu a:hover {
+    border-bottom: solid 2px black;
+}
