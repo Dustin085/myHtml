@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .test {
+            height: 500px;
+            width: 500px;
+            /* background-image: linear-gradient(to right, black, white, black); */
+            border: solid 1px black;
+            background-image: url(../myHtml/html5web/web/images/icon-fb.svg);
+            background-size: 80%;
+            animation: testAnime 5s infinite;
+            background-repeat: no-repeat;
+            /* background-position: 150%; */
+        }
+
+        @keyframes testAnime {
+
+            0%{
+                background-position: -100%;
+            }
+            100%{
+                background-position: 100%;
+            }
+            
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="test">
+
+    </div>
+</body>
+
+</html>
