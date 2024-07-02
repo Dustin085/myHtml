@@ -50,6 +50,26 @@ a {
     /* 將預設inline改成block */
     display: block;
     text-decoration: none;
+    color: #444;
+}
+
+/* 共用區 */
+.btn-s {
+    background-color: white;
+    color: #444;
+    /* !important權重最重，應少用 */
+    width: auto!important;
+    height: 35px;
+    /* line-height是文字的頂端到下一行的文字頂端 */
+    line-height: 30px;
+    padding: 0 20px;
+    border-radius: 99px;
+    transition: .35s ease-in-out;
+}
+
+.btn-s:hover {
+    background-color: #444;
+    color: white;
 }
 
 /* 頁首區 */
@@ -122,10 +142,22 @@ a {
     margin: 15px 0;
 }
 
+.navigation .menu li {
+    border-right: solid 1px black;
+}
+
+.navigation .menu li:last-child {
+    border-right: none;
+}
+
 .navigation .menu a {
-    color: #222;
+    /* color: #444; */
+    /* 將字級稍微調小 */
+    font-size: .9rem;
+    /* reset時設定了1.5倍line-height(行高)，現在重設為1 */
+    line-height: 1;
     /* 控制子層外距 */
-    margin: 0 10px;
+    margin: 0 15px;
     /* 預留2px給:hover的transition效果，透明的2px border */
     border-bottom: solid 2px transparent;
     transition: .35s ease-in-out;
