@@ -48,36 +48,49 @@
 
         .menu ul li {
             margin-bottom: 15px;
+            /* position: relative;
+            background: linear-gradient(to right, black, transparent, black);
+            background-position: -100% 0; */
+            /* background: black; */
+        }
+
+        .menu ul li:hover{
+            -webkit-text-fill-color: transparent;
         }
 
         .menu ul li a {
+            position: relative;
             border-bottom: solid 2px transparent;
-            transition: .6s ease-in-out;
-            transition: --myColor1 .6s, --myColor2 .6s;
-            background-image: linear-gradient(to left, var(--myColor1), var(--myColor2));
-            /* background-image: url(./html5web/web/images/icon-fb.svg); */
+            transition: .35s ease-in-out;
+            /* background-image: linear-gradient(to right, black, transparent, black); */
+            background-color: black;
+            background: linear-gradient(to right, black 50% , transparent, black 70%);
+            /* background: black; */
+            background-size: 400%;
+            background-clip: text;
+            overflow: hidden;
+            /* background-position: -100px; */
+            background-repeat: no-repeat;
         }
 
         .menu ul li a:hover {
             border-bottom: solid 2px black;
-            /* background-image: url(./html5web/web/images/icon-fb-hover.svg); */
-            --myColor1: white;
-            --myColor2: black;
+            animation: shinText .6s;
+            /* background-position: 100%; */
+            -webkit-text-fill-color: transparent;
         }
 
-        @property --myColor1 {
-            syntax: '<color>';
-            initial-value: black;
-            inherits: false;
+        @keyframes shinText {
+            0%{
+                background-position: 0%;
+            }
+            50% {
+                /* background-position: 100%; */
+            }
+            100%{
+                background-position: 100%;
+            }
         }
-
-        @property --myColor2 {
-            syntax: '<color>';
-            initial-value: white;
-            inherits: false;
-        }
-
-        /* a:hover線性閃耀 */
     </style>
 </head>
 

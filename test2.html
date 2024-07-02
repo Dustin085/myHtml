@@ -35,6 +35,12 @@
             background-color: #d4bedb;
         }
 
+        /* 變數區 */
+        :root{
+            /* --menu-a-bg-lineargradChange: 0%; */
+            --myColor3: transparent;
+        }
+
         /* 頁首區 */
         #topbar {
             padding: 50px;
@@ -53,29 +59,57 @@
         .menu ul li a {
             border-bottom: solid 2px transparent;
             transition: .6s ease-in-out;
-            transition: --myColor1 .6s, --myColor2 .6s;
-            background-image: linear-gradient(to left, var(--myColor1), var(--myColor2));
+            /* background-image: linear-gradient(to right, transparent, var(--myColor3)); */
+            /* background-image: linear-gradient(to right, transparent var(--menu-a-bg-lineargradChange), black); */
+            /* background-image: linear-gradient(to right, var(--myColor1), var(--myColor2)); */
             /* background-image: url(./html5web/web/images/icon-fb.svg); */
         }
 
         .menu ul li a:hover {
             border-bottom: solid 2px black;
+            background-image: linear-gradient(to right, transparent, rgb(139, 144, 207));
             /* background-image: url(./html5web/web/images/icon-fb-hover.svg); */
-            --myColor1: white;
-            --myColor2: black;
+            /* animation-name: linearBgChange;
+            animation-duration: .6s; */
         }
 
-        @property --myColor1 {
+        .menu ul li a:focus{
+            background-image: none;
+            animation-name: rotate;
+            animation-duration: 1s;
+        }
+
+        @keyframes linearBgChange {
+            from{
+                
+            }
+            to{
+                --myColor3:black;
+            }
+        }
+
+        @keyframes rotate {
+            50%{
+                rotate: 180deg;
+            }
+            100%{
+                rotate: 360deg;
+            }
+        }
+
+        /* @property --myColor1 {
             syntax: '<color>';
-            initial-value: black;
+            initial-value: transparent;
             inherits: false;
         }
 
         @property --myColor2 {
             syntax: '<color>';
-            initial-value: white;
+            initial-value: transparent;
             inherits: false;
-        }
+        } */
+
+
 
         /* a:hover線性閃耀 */
     </style>
