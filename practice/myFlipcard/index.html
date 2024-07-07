@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-size: contain;
+            background-position: center center;
+            background-repeat: no-repeat;
+        }
+
+        body{
+            background-color: rgb(207, 233, 224);
+        }
+
+        .flipCard {
+            width: 500px;
+            height: 500px;
+        }
+
+        .flipCard .cardInner{
+            height: 100%;
+            width: 100%;
+        }
+
+        .flipCard .cardFront {
+            height: 100%;
+            background-image: url(./image/cardBack.png);
+            transition: .6s linear;
+            /* animation: flipCardBack .6s linear forwards; */
+        }
+
+        .flipCard .cardFront:hover {
+            animation: flipCardFront .6s linear forwards;
+        }
+
+        .flipCard .cardFront:not(:hover){
+            animation: flipCardBack .6s linear forwards;
+        }
+
+        .flipCard .cardFront:hover~.cardBack {
+            animation: flipCardBack .6s linear forwards;
+        }
+
+        .flipCard .cardFront:not(:hover)~.cardBack{
+            animation: flipCardFront .6s linear forwards;
+        }
+
+        .flipCard .cardBack {
+            height: 100%;
+            width: 100%;
+            position: relative;
+            top: -100%;
+            left: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: -1;
+            background-color: rgb(225, 208, 231);
+            transform: rotateY(180deg);
+            opacity: 0;
+            /* animation: flipCardFront .6s linear forwards; */
+        }
+
+        @keyframes flipCardFront {
+            50% {
+                transform: rotateY(90deg);
+                opacity: 1;
+            }
+
+            51% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+
+        @keyframes flipCardBack {
+            50% {
+                transform: rotateY(90deg);
+                opacity: 0;
+            }
+
+            51% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 1;
+                transform: rotateY(0deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="flipCard">
+        <div class="cardInner">
+            <div class="cardFront">
+
+            </div>
+            <div class="cardBack">
+                <h2>cardBack</h2>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

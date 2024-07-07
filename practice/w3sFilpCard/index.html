@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-size: contain;
+            background-position: center center;
+            background-repeat: no-repeat;
+        }
+
+        body {
+            background-color: rgb(207, 233, 224);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .flipCard {
+            width: 500px;
+            height: 500px;
+            /* perspective可以修改觀察者到z=0的距離，可以增加3D感 */
+            perspective: 1000px;
+        }
+
+        .flipCardInner {
+            position: relative;
+            height: 100%;
+            width: 100%;
+            transform-style: preserve-3d;
+            transition: .6s linear;
+        }
+
+        .flipCard:hover .flipCardInner {
+            transform: rotateY(180deg);
+        }
+
+        .cardFront,
+        .cardBack {
+            /* 設定成absolute時會往父層找position:relative | absolute | fixed 的元素做定位 */
+            /* 若都沒有則定位在body上 */
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            backface-visibility: hidden;
+        }
+
+        .cardFront {
+            background-image: url(./image/cardBack.png);
+        }
+
+        .cardBack {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(225, 208, 231);
+            transform: rotateY(180deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="flipCard">
+        <div class="flipCardInner">
+            <div class="cardFront">
+
+            </div>
+            <div class="cardBack">
+                <h2>Card Back</h2>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
