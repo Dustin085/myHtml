@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>基本表單</title>
+    <style>
+        #form__member--edit>* {
+            /* 選擇#form__member--edit下面第一層的所有元素 */
+            display: block;
+            margin: 10px 0;
+        }
+
+        #form__member--edit label {
+            line-height: 1;
+            margin-top: 25px;
+        }
+
+        #form__member--edit div {
+            margin-top: 50px;
+        }
+
+        #username {
+            width: 150px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 產品搜尋表單 -->
+    <!-- method用get會把表單資料顯示在網址列，無腦使用post就好。action指定表單數據送到何處 -->
+    <form action="" method="post" name="form-search" id="form-search" title="產品搜尋表單">
+        <label for="search">產品搜尋：</label>
+        <!-- title會讓報讀機念，placeholder是在欄位內灰灰的提示字 -->
+        <input type="search" name="search" id="search" title="產品搜尋欄位，請輸入產品關鍵字" placeholder="請輸入產品關鍵字">
+        <input type="submit" value="搜尋" name="btn__submit--search" id="btn__submit--search" title="產品搜尋按鈕">
+    </form>
+    <hr>
+    <!-- 會員資料修改表單 -->
+    <header>
+        <h2>會員資料修改</h2>
+        <small>「*」為必填</small>
+    </header>
+    <form action="" method="post" name="form__member-edit" id="form__member--edit" title="會員資料修改表單">
+
+        <label for="username">*姓名：</label>
+        <input type="text" name="username" id="username" title="姓名欄位" placeholder="請輸入姓名" required autocomplete
+            autofocus>
+        <!-- required:必填/autocomplete:抓取輸入過的紀錄/autofocus:自動聚焦(一個檔案裡只能有一個autofocus) -->
+        <!-- 要修改表單對話框不要用屬性size，使用css(width)修改 -->
+
+        <label for="account">帳號：</label>
+        <input type="text" name="account" id="account" title="帳號欄位禁用不可修改" value="abc123" disabled>
+        <!-- disabled:禁用，推薦使用，樣式比readonly明確，使用者較容易理解易用性高 -->
+
+        <label for="idnumber">身份證字號：</label>
+        <input type="text" name="idnumber" id="idnumber" title="身份證字號欄位不可修改" value="A123546789" readonly>
+        <!-- readonly:唯讀，不推薦使用，樣式較不明確，使用者容易誤會 -->
+
+        <label for="tel">電話：</label>
+        <input type="tel" name="tel" id="tel" title="聯絡電話欄位" placeholder="請輸入電話">
+
+        <label for="mobile">手機號碼：</label>
+        <input type="tel" name="mobile" id="mobile" title="手機號碼欄為" placeholder="共10碼" maxlength="10">
+        <!-- maxlength:限制最大字數 -->
+
+        <label for="email">Email：</label>
+        <input type="email" name="email" id="email" title="email欄位" placeholder="請輸入電子郵件信箱" required>
+
+        <label for="password">修改密碼：</label>
+        <input type="password" name="password" id="password">
+        <!-- 眼睛開關功能：在JS轉換type => textc和password -->
+
+        <label for="password-1">確認密碼：</label>
+        <input type="password" name="password" id="password-1">
+        <!-- 注意：id不能重複 -->
+
+        <label for="birthday">生日：</label>
+        <input type="date" name="birthday" id="birthday" title="生日欄位" placeholder="請選擇生日">
+        <!-- 也可以改寫成自己的日曆(html, css, js) -->
+
+        <label for="file">上傳檔案：<small>(檔案體積不可超過1Mb，僅可上傳以下檔案類型 .jpg、.gif、.png、.pdf)</small></label>
+        <input type="file" name="file" id="file" title="上傳檔案按鈕" multiple>
+        <!-- multiple:允許上傳多個檔案，通常會加此屬性 -->
+        <!-- 可寫js來檢查檔案類型和檔案大小 -->
+
+        <label for="gender">性別：</label>
+        <select name="gender" id="gender" title="性別選項">
+            <option value="">請選擇</option>
+            <option value="生理男">生理男</option>
+            <option value="生理女">生理女</option>
+        </select>
+        <!-- select預設顯示第一個選項，所以要自己在第一個選項設定「請選擇」(不給值) -->
+
+        <label for="other">其他類別：</label>
+        <select name="other" id="other" title="類別欄位">
+            <option value="">請選擇</option>
+            <optgroup label="分類一">
+                <option value="選項一">選項一</option>
+                <option value="選項二">選項二</option>
+                <option value="選項三">選項三</option>
+            </optgroup>
+            <optgroup label="分類二">
+                <option value="選項一">選項一</option>
+                <option value="選項二">選項二</option>
+                <option value="選項三">選項三</option>
+            </optgroup>
+        </select>
+        <!-- optgroup選項分類，需搭配label屬性設定分類名稱 -->
+
+        <!-- 相關元素群組 -->
+        <fieldset>
+            <!-- 相關元素群組 標題 -->
+            <legend>會員類型：</legend>
+            <!-- 相關元素項目，name相同代表是同一個群組 -->
+            <input type="radio" name="member" id="member-1" value="金卡會員">
+            <label for="member-1">金卡會員</label>
+            <input type="radio" name="member" id="member-2" value="銀卡會員">
+            <label for="member-2">銀卡會員</label>
+            <input type="radio" name="member" id="member-3" value="銅卡會員">
+            <label for="member-3">銅卡會員</label>
+        </fieldset>
+        <!-- radio為單選，必須帶值(value)，才能回傳值給資料庫 -->
+
+        <fieldset>
+            <!-- 相關元素群組 標題 -->
+            <legend>其他類型：</legend>
+            <!-- 相關元素項目，name相同代表是同一個群組 -->
+            <input type="radio" name="category" id="category-1" value="類型一">
+            <label for="category-1">類型一</label>
+
+            <input type="radio" name="category" id="category-2" value="類型二">
+            <label for="category-2">類型二</label>
+
+            <input type="radio" name="category" id="category-3" value="類型三">
+            <label for="category-3">類型三</label>
+        </fieldset>
+
+        <fieldset>
+            <legend>訂閱內容：<small>可複選</small></legend>
+
+            <input type="checkbox" name="order" id="order-1" value="國際">
+            <label for="order-1">國際</label>
+
+            <input type="checkbox" name="order" id="order-2" value="社會">
+            <label for="order-2">社會</label>
+
+            <input type="checkbox" name="order" id="order-3" value="政治">
+            <label for="order-3">政治</label>
+
+            <input type="checkbox" name="order" id="order-4" value="娛樂">
+            <label for="order-4">娛樂</label>
+
+            <input type="checkbox" name="order" id="order-5" value="生活">
+            <label for="order-5">生活</label>
+        </fieldset>
+        <!-- cheakbox為複選，必須帶值(value)，才能回傳給資料庫 -->
+
+        <div>
+            <input type="reset" name="btn__reset--member" id="btn__reset--member" title="會員資料修改重填" value="重填">
+            <input type="submit" name="btn__submit--member" id="btn__submit--member" title="會員資料修改送出" value="送出">
+        </div>
+    </form>
+</body>
+
+</html>

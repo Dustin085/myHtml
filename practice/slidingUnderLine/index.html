@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 參考:https://codepen.io/mehi/pen/MyWqPM */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        a {
+            display: block;
+            text-decoration: none;
+            color: black;
+        }
+
+        nav {
+            height: 200px;
+            padding: 50px;
+            display: flex;
+            justify-content: center;
+        }
+
+        ul,
+        li {
+            list-style: none;
+        }
+
+        ul {
+            display: flex;
+            align-items: center;
+        }
+
+        li {
+            margin-right: 25px;
+        }
+
+        li:last-child {
+            margin-right: 0;
+        }
+
+        .link {
+            /* relative幫助:after定位 */
+            position: relative;
+        }
+
+        .link:after {
+            content: '';
+            background: black;
+            /* 需要是diplay: block，不然不會被放到a的下面 */
+            display: block;
+            position: absolute;
+            width: 0;
+            height: 1.5px;
+            right: 0;
+            transition: .25s ease-in-out;
+        }
+
+        .link:hover::after {
+            width: 100%;
+            left: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a class="link" href="#">HOME</a></li>
+            <li><a class="link" href="#">PRODUCT</a></li>
+            <li><a class="link" href="#">MEDIA</a></li>
+            <li><a class="link" href="#">ABOUT</a></li>
+            <li><a class="link" href="#">CONTACT</a></li>
+        </ul>
+    </nav>
+</body>
+
+</html>
