@@ -1,3 +1,9 @@
+/* 變數區 */
+:root {
+    --primary-color--dark: #2F93B2;
+    --primary-color--light: rgba(127, 163, 175, 0.8);
+}
+
 /* reset */
 * {
     margin: 0;
@@ -5,20 +11,208 @@
     box-sizing: border-box;
 }
 
+/* 重置字體 */
+body {
+    font-family:
+        /*西文*/
+        -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica, Arial,
+        /*中文*/
+        "蘋方-繁", "PingFang TC", "黑體-繁", "Heiti TC", "微軟正黑體", "Microsoft JhengHei", "Noto Sans TC", sans-serif;
+    font-size: 100%;
+    line-height: 1.5;
+    /* background-color: rgb(175, 207, 191); */
+}
+
+/* 重置標題 */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
+}
+
+/* 重置列表 */
 ul,
 ol {
     list-style: none;
 }
 
+/* 重置圖片 */
+img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+/* 重置連接 */
+a {
+    /* 將預設inline改成block */
+    display: block;
+    text-decoration: none;
+    color: #444;
+}
+
+/* 共用區 */
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 /* 頁首區 */
-.topimagebox:hover figure:first-child{
+/* topbar */
+#topbar {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 50px;
+    z-index: 3;
+}
+
+#topbar .menu {
+    display: flex;
+    align-items: center;
+}
+
+#topbar .menu ul {
+    display: flex;
+    align-items: center;
+    font-family: sans-serif;
+    font-weight: 600;
+}
+
+#topbar .menu ul li {
+    position: relative;
+    margin-right: 40px;
+    font-size: 1.1rem;
+}
+
+#topbar .menu ul li a {
+    transition: .35s;
+    padding-bottom: 10px;
+}
+
+#topbar .menu ul li a:hover {
+    color: var(--primary-color--dark);
+}
+
+
+#topbar .menu ul li a::after {
+    position: absolute;
+    transition: .35s;
+    content: '';
+    background-color: var(--primary-color--dark);
+    height: 2px;
+    width: 30px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%) scale(0, 1);
+    /* 先左移總寬50%，此時左邊頂點會在"中"點，再右移50%自身寬度，則自身中點對齊總寬中點 */
+    /* --width-diff: 0%; */
+    /* background-color: var(--primary-color--dark); */
+    /* background-image: linear-gradient(90deg, transparent calc(50% - var(--width-diff)), var(--primary-color--dark), transparent calc(50% + var(--width-diff))); */
+
+}
+
+#topbar .menu ul li a:hover::after {
+    transform: translateX(-50%) scale(1.2, 1);
+    /* --width-diff: 30%; */
+}
+
+/* topimage */
+#topimage {
+    position: relative;
+    height: 100vh;
+    background-color: #EDEDEC;
+    justify-content: center;
+}
+
+#topimage .container__logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container__logo .logo {
+    width: 15vw;
+}
+
+.container__logo .slogan1 {
+    font-family: sans-serif;
+    font-size: 2vw;
+    font-weight: 600;
+    letter-spacing: .2rem;
+    color: var(--primary-color--dark);
+    opacity: .75;
+    margin-top: 25px;
+}
+
+.container__logo .slogan2 {
+    font-family: sans-serif;
+    font-size: 1.15vw;
+    letter-spacing: .1rem;
+    margin-top: 10px;
+}
+
+
+#topimage .list__product {
+    position: absolute;
+    bottom: 50px;
+    display: flex;
+}
+
+.list__product li {
+    position: relative;
+    /* relative讓元素可以使用top bottom right left做位置調整，不調整的情況元素位置會和static相同 */
+    margin-right: 3vw;
+    font-size: 1.2rem;
+    font-weight: 600;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px 25px;
+    border-radius: 20px;
+    transition: .35s;
+}
+
+.list__product li a{
+    transition: .35s;
+}
+
+.list__product li:hover{
+    background-color: var(--primary-color--light);
+    bottom: 3px;
+}
+
+.list__product li:hover a{
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.topimagebox:hover figure:first-child {
     display: none;
 }
 
-.topimagebox:hover figure:last-child{
+.topimagebox:hover figure:last-child {
     display: block;
 }
 
-.topimagebox figure:nth-child(2){
+.topimagebox figure:nth-child(2) {
     display: none;
+}
+
+#warning{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    background-color: #dbbfbf;
+}
+
+#warning h2{
+    font-size: 1rem;
+    font-weight: 600;
+    margin-right: 50px;
 }
