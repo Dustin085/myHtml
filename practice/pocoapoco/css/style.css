@@ -1,0 +1,24 @@
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+/* 頁首區 */
+.topimagebox:hover figure:first-child{
+    display: none;
+}
+
+.topimagebox:hover figure:last-child{
+    display: block;
+}
+
+.topimagebox figure:nth-child(2){
+    display: none;
+}
