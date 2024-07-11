@@ -129,10 +129,17 @@ section {
     position: relative;
     height: 100vh;
     background-color: #EDEDEC;
-    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* justify-content: center; */
 }
 
 #topimage .container__logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -162,6 +169,8 @@ section {
 
 #topimage .list__product {
     position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
     bottom: 50px;
     display: flex;
 }
@@ -169,25 +178,31 @@ section {
 .list__product li {
     position: relative;
     /* relative讓元素可以使用top bottom right left做位置調整，不調整的情況元素位置會和static相同 */
-    margin-right: 3vw;
+    text-align: center;
+    width: 220px;
+    margin-right: 1.2vw;
     font-size: 1.2rem;
     font-weight: 600;
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 10px 25px;
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 10px 15px;
     border-radius: 20px;
     transition: .35s;
 }
 
-.list__product li a{
+.list__product li:last-child {
+    margin-right: 0;
+}
+
+.list__product li a {
     transition: .35s;
 }
 
-.list__product li:hover{
+.list__product li:hover {
     background-color: var(--primary-color--light);
     bottom: 3px;
 }
 
-.list__product li:hover a{
+.list__product li:hover a {
     color: rgba(255, 255, 255, 0.8);
 }
 
@@ -203,7 +218,27 @@ section {
     display: none;
 }
 
-#warning{
+img {
+    /* 避免img超出父層 */
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.topimagebox figure {
+    position: absolute;
+    /* 暫時none幫助排版 */
+    display: none;
+}
+
+.topimage01 figure {
+    /* 暫時加block做排版 */
+    display: block;
+    top: 20%;
+    height: 15vh;
+}
+
+#warning {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -211,7 +246,7 @@ section {
     background-color: #dbbfbf;
 }
 
-#warning h2{
+#warning h2 {
     font-size: 1rem;
     font-weight: 600;
     margin-right: 50px;
