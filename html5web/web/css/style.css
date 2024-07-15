@@ -81,7 +81,8 @@ a {
 
 #form--contact input,
 #form--contact textarea,
-#topbar .menu {
+#topbar .menu,
+button#btn__contact--submit {
     /* 玻璃擬態效果 */
     /* linear-gradient(white 60%, black 60%)會變成無漸層的分割色塊 */
     background-image: linear-gradient(150deg,
@@ -96,7 +97,12 @@ a {
 
 /* 頁首區 */
 #topbar {
-    background-color: #c9aeae;
+    /* 固定定位，不會跟著卷軸走 */
+    position: fixed;
+    /* 999最高，若無設定則後寫者蓋住先寫者 */
+    z-index: 999;
+    /* 固定定位會導致抓內容尺寸，故要設定width: 100%; */
+    width: 100%;
     /* 預設主軸為水平 */
     display: flex;
     /* 主軸(水平)均分，貼齊頭尾 */
@@ -104,6 +110,7 @@ a {
     /* 副軸(垂直)置中 */
     align-items: center;
     padding: 30px;
+    /* background-color: #c9aeae; */
 }
 
 .logo {
@@ -211,6 +218,7 @@ section {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 30px;
 }
 
 .title h2 {
@@ -230,8 +238,37 @@ section {
     line-height: 2.5rem;
 }
 
+.box__list{
+    width: 80%;
+    display: flex;
+}
+
+.box__list .item{
+    /* 避免文案寬度不同時造成item大小不同 */
+    flex: 1;
+    /* 間距固定，常用，以免縮放時間距跳來跳去 */
+    margin: 0 15px;
+}
+
+.box__list h1{
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.box__list p{
+    font-size: .9rem;
+    /* 齊行: 通常只有中文使用，英文使用時會變成單字間距均分 */
+    /* text-align: justify; */
+}
+
+/* 最新消息區 */
+
+
 /* 聯絡我們區 */
 #contact {
+    /* 專門做為absolute的定位依據 */
+    position: relative;
+    overflow: clip;
     /* 背景影像基本設定 */
     background-image: url(../images/bg_contact.jpg);
     background-size: cover;
@@ -290,26 +327,32 @@ section {
 /* 動態按鈕 */
 button#btn__contact--submit {
     /* position: relative; */
-    outline: none;
-    text-decoration: none;
+    /* outline: none; */
+    /* text-decoration: none; 取消文字裝飾底線 */
     border-radius: 50px;
+    /* 定義起始位置 */
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    /* text-transform: uppercase; */
+    /* text-transform: uppercase; 設定字母大寫 */
     height: 60px;
     width: 210px;
-    opacity: 1;
-    background-color: #ffffff;
-    border: 1px solid rgba(22, 76, 167, 0.6);
+    /* opacity: 1; 透明度 */
+    /* bg-color有預設值 */
+    background-color: #c9aeae3d;
+    /* border有預設值 */
+    border: 1px solid #c9aeae79;
 }
 
 #btn__contact--submit span {
-    color: #164ca7;
-    font-size: 12px;
+    color: #8f6b6d;
+    font-size: .85rem;
     font-weight: 500;
-    letter-spacing: 0.7px;
+    /* 每個字右邊加字距 */
+    letter-spacing: 1rem;
+    /* 補回最右邊字多出來的字距 */
+    padding-left: 1rem;
 }
 
 #btn__contact--submit:hover {
@@ -323,44 +366,82 @@ button#btn__contact--submit {
 
 @keyframes rotate {
     0% {
-        transform: rotate(0deg) translate3d(0, 0, 0);
+        transform: rotate(0deg)
+            /* translate3d(0, 0, 0) */
+        ;
     }
 
     25% {
-        transform: rotate(3deg) translate3d(0, 0, 0);
+        transform: rotate(3deg)
+            /* translate3d(0, 0, 0) */
+        ;
     }
 
     50% {
-        transform: rotate(-3deg) translate3d(0, 0, 0);
+        transform: rotate(-3deg)
+            /* translate3d(0, 0, 0) */
+        ;
     }
 
     75% {
-        transform: rotate(1deg) translate3d(0, 0, 0);
+        transform: rotate(1deg)
+            /* translate3d(0, 0, 0) */
+        ;
     }
 
     100% {
-        transform: rotate(0deg) translate3d(0, 0, 0);
+        transform: rotate(0deg)
+            /* translate3d(0, 0, 0) */
+        ;
     }
 }
 
 @keyframes storm {
     0% {
-        transform: translate3d(0, 0, 0) translateZ(0);
+        transform: translate3d(0, 0, 0)
+            /* translateZ(0) */
+        ;
     }
 
     25% {
-        transform: translate3d(4px, 0, 0) translateZ(0);
+        transform: translate3d(4px, 0, 0)
+            /* translateZ(0) */
+        ;
     }
 
     50% {
-        transform: translate3d(-3px, 0, 0) translateZ(0);
+        transform: translate3d(-3px, 0, 0)
+            /* translateZ(0) */
+        ;
     }
 
     75% {
-        transform: translate3d(2px, 0, 0) translateZ(0);
+        transform: translate3d(2px, 0, 0)
+            /* translateZ(0) */
+        ;
     }
 
     100% {
-        transform: translate3d(0, 0, 0) translateZ(0);
+        transform: translate3d(0, 0, 0)
+            /* translateZ(0) */
+        ;
     }
+}
+
+/* 裝飾花 */
+.flower_r{
+    /* 絕對定位 */
+    position: absolute;
+    left: -19px;
+    bottom: -10px;
+    width: 300px;
+    transform: rotate(30deg);
+}
+
+.flower_w{
+    position: absolute;
+    right: -34px;
+    top: 179px;
+    width: 300px;
+    transform: rotate(-30deg);
 }

@@ -54,6 +54,68 @@
         </nav>
     </header>
     <main>
+        <section id="banner"></section>
+        <section id="news">
+            <header class="title">
+                <h2>NEWS</h2>
+                <h3>最新消息</h3>
+            </header>
+            <div class="box__list">
+                <!-- a>(figure>img)+div.content>h1+p -->
+                <article class="item">
+                    <a href="#">
+                        <figure><img src="./images/pt_news1.jpg" alt=""></figure>
+                        <div class="content">
+                            <h1>NEWS TITLE</h1>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, voluptatum error.
+                                Modi sit architecto ipsa perferendis vitae repellat, vero quasi eaque tenetur? Et
+                                consectetur vitae corrupti minus tempora veritatis suscipit.</p>
+                        </div>
+                    </a>
+                </article>
+                <article class="item">
+                    <a href="#">
+                        <figure><img src="./images/pt_news2.jpg" alt=""></figure>
+                        <div class="content">
+                            <h1>NEWS TITLE</h1>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut blanditiis sit doloribus
+                                repudiandae facilis suscipit, voluptatum quibusdam recusandae aspernatur nisi sint
+                                labore dolores quis asperiores mollitia assumenda officiis eligendi dicta?</p>
+                        </div>
+                    </a>
+                </article>
+                <article class="item">
+                    <a href="#">
+                        <figure><img src="./images/pt_news3.jpg" alt=""></figure>
+                        <div class="content">
+                            <h1>NEWS TITLE</h1>
+                            <p>「春日繚亂，花開五十字」—— 花店新春鮮花大放送！
+                                在這春暖花開的季節裡，五十字花店榮幸推出精心挑選的鮮花系列，
+                                讓您感受到春天的溫暖和生命的盎然。無論是用於節日慶典、生日慶祝，
+                                或者是表達感謝和愛意，我們都有適合您的花束。</p>
+                        </div>
+                    </a>
+                </article>
+            </div>
+        </section>
+        <section id="service">
+            <header class="title">
+                <h2>SERVICE</h2>
+                <h3>服務項目</h3>
+            </header>
+        </section>
+        <section id="video">
+            <header class="title">
+                <h2>VIDEO</h2>
+                <h3>相關影片</h3>
+            </header>
+        </section>
+        <section id="about">
+            <header class="title">
+                <h2>ABOUT</h2>
+                <h3>關於我們</h3>
+            </header>
+        </section>
         <section id="contact">
             <header class="title">
                 <h2>CONTACT</h2>
@@ -67,7 +129,8 @@
                 <input type="tel" name="tel" id="tel" title="聯絡電話欄位" placeholder="請輸入電話" autocomplete>
 
                 <label for="email">*Email：</label>
-                <input type="email" name="email" id="email" title="email欄位" placeholder="請輸入電子郵件信箱" required autocomplete>
+                <input type="email" name="email" id="email" title="email欄位" placeholder="請輸入電子郵件信箱" required
+                    autocomplete>
 
                 <label for="message">*留言：</label>
                 <textarea name="message" id="message" title="留言欄位" rows="10" required placeholder="請輸入您的意見"></textarea>
@@ -78,6 +141,9 @@
                     <span>送出</span>
                 </button>
             </form>
+            <!-- 裝飾花 -->
+            <div class="flower_r"><img src="./images/flower_r.png" alt="裝飾紅花"></div>
+            <div class="flower_w"><img src="./images/flower_w.png" alt="裝飾白花"></div>
         </section>
     </main>
     <footer></footer>
