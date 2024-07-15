@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        h2 {
+            width: 500px;
+            height: 500px;
+            background-image: linear-gradient(135deg, rgb(214, 199, 218), transparent, rgb(214, 199, 218));
+            text-align: center;
+            
+        }
+    </style>
+</head>
+
+<body>
+    <h2>
+        我一定要轉完一圈才要停
+    </h2>
+    <script>
+        // 在interval之後檢查condition然後決定要不要再做一次funcToRedo並且會預約下一次的檢查
+        // 可以在動畫跑完一輪後檢查要不要跑下一輪
+        function redoAfteraInterval(funcToRedo, interval) {
+            funcToRedo();
+            setTimeout(() => {
+                if (a > b) {
+                    // a > b is your condition
+                    redoAfteraInterval();
+                }
+            }, interval);
+        }
+    </script>
+</body>
+
+</html>
