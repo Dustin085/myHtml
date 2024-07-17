@@ -64,12 +64,16 @@
                 <!-- a>(figure>img)+div.content>h1+p -->
                 <article class="item">
                     <a href="#">
+                        <!-- 圖片 -->
                         <figure><img src="./images/pt_news1.jpg" alt=""></figure>
+                        <!-- 內容 -->
                         <div class="content">
                             <h1>NEWS TITLE</h1>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, voluptatum error.
-                                Modi sit architecto ipsa perferendis vitae repellat, vero quasi eaque tenetur? Et
-                                consectetur vitae corrupti minus tempora veritatis suscipit.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure tenetur ipsum, quibusdam
+                                harum soluta sapiente, accusantium libero fugit non deleniti nulla dolorem magnam illum.
+                                Voluptas sunt modi adipisci, laborum consequuntur dolorum ad consequatur voluptate
+                                aspernatur placeat aperiam debitis possimus aliquid fugiat labore asperiores obcaecati
+                                perferendis iste? Minus distinctio ex fugiat.</p>
                         </div>
                     </a>
                 </article>
@@ -78,9 +82,12 @@
                         <figure><img src="./images/pt_news2.jpg" alt=""></figure>
                         <div class="content">
                             <h1>NEWS TITLE</h1>
-                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut blanditiis sit doloribus
-                                repudiandae facilis suscipit, voluptatum quibusdam recusandae aspernatur nisi sint
-                                labore dolores quis asperiores mollitia assumenda officiis eligendi dicta?</p>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. At harum laborum nostrum ea
+                                accusantium aperiam libero necessitatibus, rerum cumque hic aliquid alias itaque,
+                                adipisci ipsa natus corporis dolorem ex quibusdam recusandae esse! Aliquam facilis quas
+                                sint, dolor quibusdam sapiente non saepe, repellendus explicabo velit distinctio. Iusto
+                                ipsam quibusdam earum, laborum fuga iste ducimus esse quo exercitationem natus aut
+                                aliquam sint!</p>
                         </div>
                     </a>
                 </article>
@@ -92,29 +99,161 @@
                             <p>「春日繚亂，花開五十字」—— 花店新春鮮花大放送！
                                 在這春暖花開的季節裡，五十字花店榮幸推出精心挑選的鮮花系列，
                                 讓您感受到春天的溫暖和生命的盎然。無論是用於節日慶典、生日慶祝，
+                                或者是表達感謝和愛意，我們都有適合您的花束。「春日繚亂，花開五十字」—— 花店新春鮮花大放送！
+                                在這春暖花開的季節裡，五十字花店榮幸推出精心挑選的鮮花系列，
+                                讓您感受到春天的溫暖和生命的盎然。無論是用於節日慶典、生日慶祝，
                                 或者是表達感謝和愛意，我們都有適合您的花束。</p>
                         </div>
                     </a>
                 </article>
             </div>
         </section>
+        <!-- 服務項目區 -->
         <section id="service">
+            <!-- 標題區 -->
             <header class="title">
                 <h2>SERVICE</h2>
                 <h3>服務項目</h3>
             </header>
+            <!-- 列表區 -->
+            <!-- ul.box__list>li.item*4>a[href="#"]>h1{SERVICE TITLE}+p -->
+            <ul class="box__list">
+                <li class="item svc-1">
+                    <a href="#" class="content">
+                        <h1>SERVICE TITLE</h1>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla similique pariatur aperiam
+                            deserunt vel, architecto asperiores commodi? Odit sequi sit aliquid dolores! Sed harum
+                            perferendis dolorum molestiae deserunt? Architecto, sint.</p>
+                    </a>
+                </li>
+                <li class="item svc-2">
+                    <a href="#" class="content">
+                        <h1>SERVICE TITLE</h1>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corrupti quidem ipsum, ab sit
+                            ratione deserunt voluptas reiciendis sequi, quas est qui repudiandae officia quod facere
+                            amet minima ullam facilis beatae!</p>
+                    </a>
+                </li>
+                <li class="item svc-3">
+                    <a href="#" class="content">
+                        <h1>SERVICE TITLE</h1>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, corrupti accusantium. Iusto
+                            nam aut necessitatibus quibusdam cum nihil maiores! Necessitatibus, molestias labore
+                            nihil quod at eligendi ab corporis minima aspernatur!</p>
+                    </a>
+                </li>
+                <li class="item svc-4">
+                    <a href="#" class="content">
+                        <h1>SERVICE TITLE</h1>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore illo animi pariatur
+                            voluptatibus veniam debitis ipsum recusandae suscipit ipsa nobis. Tempora dolore
+                            explicabo maxime iste nostrum natus, suscipit impedit nemo!</p>
+                    </a>
+                </li>
+            </ul>
         </section>
         <section id="video">
             <header class="title">
                 <h2>VIDEO</h2>
                 <h3>相關影片</h3>
             </header>
+            <!-- 影片容器 -->
+            <div class="video">
+                <!-- 影片本人，影片封面可另外做圖以符合網站色調或風格 -->
+                <!-- 影片要用autoplay，一定要加muted(此為瀏覽器的規定) -->
+                <!-- playsinline可以讓iphone播放影片時不使用燈箱效果，如果要讓iphone自動播放的話，必須寫playsinline -->
+                <!-- 影片不能當bg-image，只能用absolute來做 -->
+                <video src="./images/Planter.mp4" poster="./images/cover.jpg" controls></video>
+            </div>
         </section>
         <section id="about">
-            <header class="title">
-                <h2>ABOUT</h2>
-                <h3>關於我們</h3>
-            </header>
+            <div class="content">
+                <header class="title">
+                    <h2>ABOUT</h2>
+                    <h3>關於我們</h3>
+                </header>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quod, dignissimos ipsa sapiente eius
+                    facere enim hic omnis nemo, odio ipsum nostrum repellendus atque ab tempore voluptas dolorum
+                    libero neque a, architecto ea veritatis sit. Porro, cupiditate tenetur quam ipsa itaque minus
+                    autem nemo magnam culpa accusamus rem eveniet sed esse beatae, mollitia laudantium, repudiandae
+                    ipsam consequuntur. Iste nulla maxime, rem eum fugit sapiente natus dicta delectus temporibus
+                    accusantium eaque voluptates tempora odit fuga repellendus, asperiores, architecto sunt facere
+                    saepe blanditiis quisquam velit recusandae obcaecati. Eveniet obcaecati quos illum deleniti,
+                    harum veniam sit repudiandae doloribus accusamus nam debitis labore, voluptatibus, odit officia!
+                    Est voluptatum sint libero ea suscipit earum magnam aspernatur illum tempora incidunt illo
+                    placeat aliquam veritatis iusto et, neque ad ipsa esse, aliquid velit? Recusandae quasi ducimus
+                    earum voluptatibus! Error accusamus laborum laboriosam mollitia, a id aspernatur repudiandae
+                    quibusdam. Rem exercitationem doloremque sequi animi perspiciatis nam illum atque, minima magni
+                    accusamus blanditiis numquam maxime, dignissimos asperiores recusandae odio id pariatur dicta
+                    voluptatum sit. Officia libero sed architecto minima cum consequatur omnis, delectus illum velit
+                    adipisci saepe, quisquam ex facere aliquid tenetur ipsa maiores pariatur! Temporibus, ad.
+                    Necessitatibus quod modi eaque assumenda perferendis, facere consequuntur laborum. Eveniet
+                    dignissimos, reprehenderit est doloremque velit nihil vero, esse repellat assumenda non qui
+                    iusto architecto illum labore voluptatibus distinctio, atque quis fuga? Aut maiores quod beatae
+                    quae adipisci id iusto doloremque qui modi, temporibus explicabo iure ipsam dolorem porro,
+                    labore consequuntur aperiam, deserunt ratione illo? Voluptas ipsam odio quisquam perferendis
+                    ratione autem quasi obcaecati corporis cum cumque, nostrum officia vero perspiciatis accusamus
+                    amet consequuntur nisi sunt pariatur similique eligendi modi sed sit laudantium? In velit,
+                    quidem facere consequatur debitis fuga. Aliquam velit repudiandae iure architecto? Ipsa fuga,
+                    natus aliquid asperiores laudantium obcaecati quaerat nesciunt perspiciatis fugiat
+                    reprehenderit, explicabo sunt eius at cupiditate vero aperiam fugit dolores quasi. Nihil
+                    molestias, nostrum atque, harum quidem voluptate labore ipsum quas ad molestiae, perspiciatis
+                    deleniti inventore optio dolore necessitatibus corporis? Pariatur animi officia, vitae sit
+                    blanditiis voluptatibus voluptatum consequuntur accusantium sint hic minus possimus, ipsam
+                    neque, repellat id molestiae corrupti illo nam mollitia suscipit non qui a ut. Tempore dicta,
+                    harum ullam dignissimos placeat natus, sequi, labore at excepturi temporibus consectetur neque
+                    illo a reprehenderit. Nam explicabo a molestias commodi aliquid distinctio natus animi, quae
+                    odit obcaecati corrupti sed consequatur. Doloribus obcaecati facere quam! Quasi, quod mollitia
+                    voluptatibus id nam dolores porro optio quae sequi voluptates minus illo, debitis et. Illo saepe
+                    debitis eveniet tempora magnam iusto at nihil, tempore quae eum hic eos optio ratione quasi eius
+                    blanditiis culpa nobis sunt dolore consectetur, fugit perferendis repellat! Itaque odio tempora
+                    reprehenderit illum! Fuga quisquam ratione, id consequatur, iste pariatur iure harum rem beatae
+                    tempora amet explicabo voluptate voluptatum quia quis! Quibusdam culpa similique deleniti
+                    quisquam esse autem, nemo quam necessitatibus deserunt nisi temporibus aliquam beatae facilis et
+                    hic veritatis velit tempora, consectetur exercitationem amet dolorem, dignissimos dolore?
+                    Consectetur laudantium, nulla odio eaque alias architecto beatae adipisci! Ad, officia maxime
+                    cupiditate ipsam consectetur omnis in non? Qui, temporibus? Enim libero inventore eos, magni in
+                    quas, expedita veniam, animi laborum laudantium facilis excepturi blanditiis ipsam ratione eum
+                    voluptatibus exercitationem assumenda earum. Consequuntur rem error a quod blanditiis veritatis
+                    voluptatem maxime odit beatae voluptate exercitationem earum temporibus laudantium, ad provident
+                    nesciunt asperiores qui. Totam impedit vel delectus neque voluptas aliquid, repudiandae incidunt
+                    ab est modi illo aspernatur reiciendis quidem dolor similique inventore consequuntur, obcaecati
+                    minus possimus. Beatae, accusantium est recusandae numquam sequi, quos quibusdam sint ducimus
+                    tempore aut modi, iure earum quae optio quidem. Molestias, itaque. Corrupti id nisi voluptatibus
+                    officia doloremque, unde similique est quo commodi enim officiis facere, dolor adipisci et amet
+                    ullam? Quasi hic optio nisi sequi distinctio laudantium molestiae, sint provident, in dolor sed
+                    minus ipsa animi voluptas sunt possimus! Numquam assumenda facere, corporis laborum deserunt
+                    totam quam inventore beatae temporibus saepe quas iste non alias nisi cumque eius eos? Similique
+                    tempora excepturi debitis assumenda doloremque officiis, error ratione. Quam praesentium quo
+                    minima, neque dicta itaque et officiis porro repudiandae iste quod aut veniam recusandae ea,
+                    blanditiis fuga? Fuga suscipit inventore, quam rerum reprehenderit, placeat eius ipsam
+                    recusandae alias reiciendis officia qui unde voluptatum officiis ex quas quia fugiat doloremque
+                    incidunt dolores sint repellendus provident magnam! Itaque beatae eaque distinctio libero
+                    suscipit praesentium cum tempora voluptatem quae aliquam? Earum, asperiores eos hic eligendi
+                    distinctio molestiae porro dicta repellendus quae, quidem suscipit laborum necessitatibus.
+                    Tempora magnam enim, exercitationem nihil ipsa sed mollitia magni distinctio vitae veritatis id
+                    veniam saepe cum unde aut quam a neque, maxime fuga repudiandae eos dicta nesciunt. At earum,
+                    repellendus in tempore architecto dicta ullam a! Accusamus, sed. Officiis sint eum ipsa id
+                    temporibus laborum hic earum libero, minima maxime rem perferendis voluptas ab quod, voluptate
+                    est quia at modi dolorem. Quisquam ratione magnam eos temporibus! Obcaecati quo quasi voluptatem
+                    suscipit minima distinctio ad minus sint culpa dolorum eveniet fuga autem tenetur harum quaerat
+                    veritatis alias voluptatum impedit, pariatur maiores reiciendis quia quis eius! Iusto,
+                    distinctio voluptates? Commodi sed cupiditate esse maxime odit? Aliquid neque dolorum tempore
+                    voluptas dicta rem? Perferendis nobis error esse commodi eos reiciendis molestiae iusto
+                    voluptate dolorem libero, repellat omnis at nulla rem pariatur, corrupti est consequatur. Odio
+                    optio aliquam totam. Nisi, alias. Eveniet voluptates molestiae accusantium quo laborum
+                    perspiciatis iure dolore quae. Corporis labore consequuntur quo natus dolores harum ullam
+                    quibusdam neque earum? Natus doloribus aut corporis numquam tempore blanditiis officiis aperiam.
+                    Qui alias ipsam vel doloribus aliquam assumenda aspernatur saepe, dolorem quasi. Ullam, ducimus,
+                    quos necessitatibus dignissimos, fugit consequuntur cupiditate numquam laudantium quis obcaecati
+                    repudiandae. Aliquid fuga quas quasi quae culpa veniam doloribus optio numquam recusandae ea vel
+                    velit ipsam fugiat accusantium voluptatum tempore, repudiandae dicta labore distinctio mollitia
+                    ex iure hic reiciendis? Adipisci temporibus neque corporis, animi perferendis cumque sint
+                    consequuntur facere totam laudantium repellendus enim nihil labore ipsum molestias voluptas
+                    eveniet aliquid alias non porro facilis nobis odio minima. Nobis ratione eum, laudantium
+                    deleniti fugit sunt maxime facilis suscipit exercitationem cum hic neque culpa illo. Libero,
+                    dolorem? Eveniet sapiente debitis temporibus ut provident laborum, iste illo!</p>
+            </div>
         </section>
         <section id="contact">
             <header class="title">
