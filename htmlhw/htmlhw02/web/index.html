@@ -234,11 +234,13 @@
         let colorLp = 'rgb(108, 80, 78)';
         let colorSp = 'rgb(71, 96, 88)';
         console.log(location.pathname);
+
+        // 加上eventlistener，滑鼠進入時改變banner顏色，離開時恢復顏色
         let hoverChangeBannerColor = (htmlEle, toColor, fromColor) => {
             let changeBannerColor = (color) => {
                 bannerEle.style.backgroundColor = color;
             }
-            htmlEle.addEventListener("mouseover", () => {
+            htmlEle.addEventListener("mouseenter", () => {
                 changeBannerColor(toColor);
             })
             htmlEle.addEventListener("mouseleave", () => {
