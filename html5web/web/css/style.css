@@ -342,7 +342,7 @@ section {
 }
 
 #service p {
-    /* 單行省略 */
+    /* 單行省略，寬度必須被設定才能使用 */
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;

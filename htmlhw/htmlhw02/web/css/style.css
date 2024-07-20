@@ -337,6 +337,11 @@ section {
     transition: .35s;
     margin-bottom: 5px;
     color: var(--listItemContentC);
+    /* 單行省略 */
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .item .content a:hover {
@@ -346,4 +351,9 @@ section {
 .item .content p {
     font-size: .7rem;
     color: var(--listItemContentC);
+    /* 單行省略 */
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
