@@ -1,0 +1,143 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');
+
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Noto Sans TC", sans-serif;
+}
+
+a {
+    display: block;
+    text-decoration: none;
+    color: black;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-weight: normal;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* 主要內容共用區 */
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.btn__text {
+    line-height: 1;
+}
+
+/* #content */
+#content {
+    height: 100vh;
+    justify-content: center;
+    background-color: #F2ECDD;
+}
+
+/* 卡片區 */
+.card {
+    width: 330px;
+    height: 350px;
+    background-color: white;
+    border-radius: 20px;
+    padding: 15px;
+}
+
+.card .fig__box {
+    position: relative;
+}
+
+.card .main__pic {
+    width: 300px;
+    height: 208px;
+    background-image: url(../images/girl-477015_1280.jpg);
+    background-size: cover;
+    mask-image: url(../images/cardFigMask.svg);
+}
+
+.card .fig__tag {
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-color: #26A69A;
+    width: 85px;
+    height: 48px;
+    mask-image: url(../images/cardTagMask.svg);
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fig__tag p {
+    color: white;
+}
+
+.card .content .tag {
+    margin-top: 10px;
+    color: #FF9136;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.card .content .title a{
+    font-size: 20px;
+    color: #727272;
+    font-weight: 600;
+}
+
+.content .content__end {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 9px;
+    color: #8A8A8A;
+}
+
+.content__end .location {
+    position: relative;
+    margin-left: 16px;
+}
+
+.content__end .location::before {
+    position: absolute;
+    bottom: 5px;
+    left: -16px;
+    content: '';
+    width: 13px;
+    height: 16px;
+    background-image: url(../images/mapPin.svg);
+}
+
+.content__end .rate {
+    position: relative;
+}
+
+.content__end .rate::before{
+    position: absolute;
+    bottom: 5px;
+    left: -19px;
+    content: '';
+    width: 15px;
+    height: 14px;
+    background-image: url(../images/rateStar.svg);
+}
