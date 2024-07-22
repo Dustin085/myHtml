@@ -13,7 +13,7 @@
         <section id="content">
             <div class="folder">
                 <ul class="tab__box">
-                    <li><button class="btn__tab" type="button">注意事項</button></li>
+                    <li><button class="btn__tab active" type="button">注意事項</button></li>
                     <li><button class="btn__tab" type="button">購買提醒</button></li>
                     <li><button class="btn__tab" type="button">取票方式</button></li>
                     <li><button class="btn__tab" type="button">活動介紹</button></li>
@@ -48,6 +48,7 @@
         btnTabArr.forEach((btnTabEle, btArrIndex)=>{
             btnTabArr[btArrIndex].addEventListener("click", (ev)=>{
                 switchActive(tabContentArr, btArrIndex);
+                switchActive(btnTabArr, btArrIndex);
             })
         });
 
@@ -58,8 +59,6 @@
             });
             arrToSwitch[targetIndex].classList.add('active');
         }
-
-        switchActive(tabContentArr, 1);
     </script>
 </body>
 

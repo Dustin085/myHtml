@@ -36,33 +36,69 @@ img {
     height: auto;
 }
 
+button {
+    border: none;
+    background-color: transparent;
+}
+
+/* 變數區 */
+:root {
+    --main-color: #FF9136;
+}
+
 /* 主要內容共用區 */
 section {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
 }
 
 /* #content */
+#content {
+    height: 100vh;
+}
+
 /* folder專區 */
-.folder{
+.folder {
     display: flex;
     width: 1278px;
     height: 803px;
 }
 
-.tab__box .btn__tab{
+.tab__box .btn__tab {
+    position: relative;
     width: 151px;
     height: 78px;
+    border: solid 3px var(--main-color);
+    /* margin位移來解決border重疊的問題 */
+    margin-top: -3px;
+    margin-right: -3px;
+    border-radius: 20px 0 0 20px;
+    color: var(--main-color);
+    font-weight: 600;
+    font-size: 25px;
 }
 
-.folder .tabCon__box{
+.tab__box li:first-child .btn__tab {
+    /* 第一個不需要處理border重疊 */
+    margin-top: 0;
+}
+
+.tab__box .btn__tab.active {
+    background-color: var(--main-color);
+    color: white;
+}
+
+.folder .tabCon__box {
     position: relative;
     width: 1127px;
     height: 803px;
+    border: solid 3px var(--main-color);
+    border-radius: 0 20px 20px 20px;
 }
 
-.tabCon__box .tab__content{
+.tabCon__box .tab__content {
     position: absolute;
     top: 0;
     left: 0;
@@ -71,6 +107,17 @@ section {
     display: none;
 }
 
-.tabCon__box .tab__content.active{
+.tabCon__box .tab__content p {
+    /* 此區為暫時樣式 */
+    display: block;
+    position: relative;
+    text-align: center;
+    top: 50%;
+    transform: translate(0, -50%);
+    font-size: 5rem;
+    font-weight: 600;
+}
+
+.tabCon__box .tab__content.active {
     display: block;
 }

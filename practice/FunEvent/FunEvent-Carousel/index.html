@@ -59,13 +59,11 @@
         // 循環botNum-topNum (ex.0-4, 若(fromNum + diff)等於5, 會循環回到0, 反之, 等於-1時, 會循環回到4)
         function circleNum(fromNum, diff, topNum, botNum = 0) {
             let finalNum = fromNum + diff;
-            console.log(`finalNum(before)=>${finalNum}`);
             if (finalNum > topNum) {
                 finalNum = botNum + (finalNum - topNum) - 1; // 額外減1才能回到正確的值
             } else if (finalNum < botNum) {
                 finalNum = topNum - Math.abs(finalNum - botNum) + 1;
             }
-            console.log(`finalNum(after)=>${finalNum}`)
             return finalNum;
         }
     </script>
