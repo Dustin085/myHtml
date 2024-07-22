@@ -1,0 +1,36 @@
+@charset "UTF-8";
+
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Noto Sans TC", sans-serif;
+}
+
+a {
+    display: block;
+    text-decoration: none;
+    color: black;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-weight: normal;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
