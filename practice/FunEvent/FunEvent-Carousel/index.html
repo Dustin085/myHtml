@@ -12,16 +12,63 @@
     <main>
         <section id="content">
             <div class="carousel">
+                <button class="arrow go-pre"></button>
                 <ul class="carousel__inner">
-                    <li class="item"></li>
+                    <li class="item active"></li>
                     <li class="item"></li>
                     <li class="item"></li>
                     <li class="item"></li>
                     <li class="item"></li>
                 </ul>
+                <button class="arrow go-next"></button>
             </div>
         </section>
     </main>
+
+    <!-- js區 -->
+    <script>
+        let btnGoPre = document.getElementsByClassName('go-pre')[0];
+        let btnGoNext = document.getElementsByClassName('go-next')[0];
+        let caroItemArr = Array.from(document.getElementsByClassName('carousel__inner')[0].getElementsByClassName('item'));
+        console.log(caroItemArr);
+        let activeIndex = 0;
+        // 做btn: activeIndex: +1 -1
+        btnGoNext.addEventListener('click', (ev) => {
+            let goNum = 1;
+            let topNum = caroItemArr.length - 1;  // 長度跟index中間差1
+            activeIndex = circleNum(activeIndex, goNum, topNum);
+            switchActive(caroItemArr, activeIndex);
+        });
+
+        btnGoPre.addEventListener('click', (ev) => {
+            let goNum = -1;
+            let topNum = caroItemArr.length - 1;
+            activeIndex = circleNum(activeIndex, goNum, topNum);
+            switchActive(caroItemArr, activeIndex);
+        });
+
+
+        // 切換active元素
+        function switchActive(arrToSwitch, targetIndex) {
+            arrToSwitch.forEach((arrEle) => {
+                arrEle.classList.remove('active');
+            });
+            arrToSwitch[targetIndex].classList.add('active');
+        }
+
+        // 循環botNum-topNum (ex.0-4, 若(fromNum + diff)等於5, 會循環回到0, 反之, 等於-1時, 會循環回到4)
+        function circleNum(fromNum, diff, topNum, botNum = 0) {
+            let finalNum = fromNum + diff;
+            console.log(`finalNum(before)=>${finalNum}`);
+            if (finalNum > topNum) {
+                finalNum = botNum + (finalNum - topNum) - 1; // 額外減1才能回到正確的值
+            } else if (finalNum < botNum) {
+                finalNum = topNum - Math.abs(finalNum - botNum) + 1;
+            }
+            console.log(`finalNum(after)=>${finalNum}`)
+            return finalNum;
+        }
+    </script>
 </body>
 
 </html>

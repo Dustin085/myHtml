@@ -34,3 +34,89 @@ img {
     width: 100%;
     height: auto;
 }
+
+button {
+    border: none;
+    background-color: transparent;
+}
+
+/* 主要內容共用區 */
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* #content */
+#content {
+    height: 100vh;
+    background-color: blanchedalmond;
+}
+
+/* carousel */
+.carousel {
+    display: flex;
+    align-items: center;
+}
+
+/* arrow */
+.carousel .arrow {
+    width: 81px;
+    height: 81px;
+    background-image: url(../images/arrow-normal.svg);
+    transition: .35s;
+}
+
+.carousel .arrow:hover {
+    background-image: url(../images/arrow-normal-hover.svg);
+}
+
+.carousel .arrow.go-next {
+    transform: rotate(180deg);
+}
+
+/* carousel__inner */
+.carousel__inner {
+    position: relative;
+    width: 1190px;
+    height: 510px;
+}
+
+.carousel__inner .item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    mask-image: url(../images/carousel-mask.svg);
+    opacity: 0;
+    transition: .6s;
+}
+
+.carousel__inner .item.active {
+    opacity: 1;
+}
+
+/* 填入item圖片 */
+.carousel__inner .item:nth-child(1) {
+    background-image: url(../images/boy-4468350_1280.jpg);
+}
+
+.carousel__inner .item:nth-child(2) {
+    background-image: url(../images/child-3045207_1280.jpg);
+}
+
+.carousel__inner .item:nth-child(3) {
+    background-image: url(../images/girl-3194977_1280.jpg);
+}
+
+.carousel__inner .item:nth-child(4) {
+    background-image: url(../images/girl-477015_1280.jpg);
+}
+
+.carousel__inner .item:nth-child(5) {
+    background-image: url(../images/kid-2252145_1280.jpg);
+}
