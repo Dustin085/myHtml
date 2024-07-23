@@ -1,0 +1,142 @@
+        /* 重置所有標籤的樣式 */
+        * {
+            margin: 0;
+            padding: 0;
+            /* 不累加內距padding與邊框border */
+            box-sizing: border-box;
+        }
+
+        /* 重置字體 */
+        body {
+            font-family:
+                /*西文*/
+                -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica, Arial,
+                /*中文*/
+                "蘋方-繁", "PingFang TC", "黑體-繁", "Heiti TC", "微軟正黑體", "Microsoft JhengHei", "Noto Sans TC", sans-serif;
+            font-size: 100%;
+            line-height: 1.5;
+        }
+
+        /* 重置標題 */
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-weight: normal;
+        }
+
+        /* 重置列表 */
+        ul,
+        ol {
+            list-style: none;
+        }
+
+        /* 重置圖片 */
+        img {
+            display: block;
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* 重置連接 */
+        a {
+            /* 將預設inline改成block */
+            display: block;
+            text-decoration: none;
+            color: var(--deep);
+        }
+
+        /* 變數區 */
+        :root {
+            --chatroom-c: rgb(248, 116, 14);
+            --chatroombody-c: rgb(237, 237, 228);
+            --chatroomfooter-c: rgb(249, 249, 247);
+        }
+
+        /* #content */
+        #content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .chatroom {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border-radius: 20px;
+            overflow: hidden;
+            height: 600px;
+            width: 400px;
+        }
+
+        /* chatroom topbar */
+        .chatroom__topbar {
+            display: flex;
+            align-items: center;
+            background-color: var(--chatroom-c);
+            padding: 10px 15px;
+        }
+
+        .chatroom__icon {
+            background-image: url(../images/20200924\ bottlegrass.png);
+            background-position: center;
+            background-size: cover;
+            border-radius: 99px;
+            height: 48px;
+            width: 48px;
+            margin-right: 15px;
+        }
+
+        .chatroom__title p {
+            font-size: 1rem;
+            color: white;
+        }
+
+        /* chatroom body */
+        .chatroom__body {
+            height: 100%;
+            background-color: var(--chatroombody-c);
+        }
+
+        /* chatroom footer */
+        .chatroom__footer{
+            display: flex;
+            align-items: center;
+            padding: 10px 15px;
+            background-color: var(--chatroomfooter-c);
+        }
+
+        .chatroom__plusicon{
+            background-image: url(../images/iconmonstr-plus-lined.svg);
+            height: 24px;
+            width: 24px;
+            margin-right: 10px;
+        }
+
+        .chatroom__input{
+            display: block;
+            flex-grow: 1;
+            margin-right: 5px;
+            font-size: 1rem;
+            outline: none;
+            line-height: 1.2rem;
+            padding: 10px 10px 10px 20px;
+            overflow: hidden;
+            border-radius: 25px;
+            /* height: 2rem; */
+            resize: none;
+        }
+
+        .chatroom__btn{
+            border: solid 2px var(--chatroombody-c);
+            background-color: var(--chatroomfooter-c);
+            border-radius: 10px;
+            /* box-shadow: 1px 1px 1px rgb(26, 25, 24); */
+            padding: 8px 15px;
+        }
