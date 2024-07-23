@@ -9,6 +9,8 @@
 </head>
 
 <body>
+    <!-- onload="btnTabArr[localStorage.getItem('activeIndex')].click()" -->
+    <!-- 直接幫用戶點擊到上次使用的頁籤 -->
     <main>
         <section id="content">
             <div class="folder">
@@ -45,20 +47,50 @@
         let btnTabArr = Array.from(document.getElementsByClassName('btn__tab'));
         let tabContentArr = Array.from(document.getElementsByClassName('tab__content'));
         // 加eventListener
-        btnTabArr.forEach((btnTabEle, btArrIndex)=>{
-            btnTabArr[btArrIndex].addEventListener("click", (ev)=>{
+        btnTabArr.forEach((btnTabEle, btArrIndex) => {
+            btnTabEle.addEventListener("click", () => {
                 switchActive(tabContentArr, btArrIndex);
                 switchActive(btnTabArr, btArrIndex);
-            })
+                // 把頁籤的index存在localStorage
+                localStorage.setItem("activeIndex", btArrIndex);
+            });
+
+            // btnTabEle.onclick = myFunc;
+
+            // btnTabEle.onclick = ()=>{
+            //     console.log(btArrIndex);
+            // };
+
+
         });
 
+
+
+        function myFunc(btArrIndex) {
+            console.log(btArrIndex);
+            // switchActive(tabContentArr, btArrIndex);
+            // switchActive(btnTabArr, btArrIndex);
+            // 把頁籤的index存在localStorage
+            // localStorage.setItem("activeIndex", btArrIndex);
+        }
+
+        // onload
+        // 如果存有上次點擊到的頁籤則直接跳轉到那頁
+        if (localStorage.hasOwnProperty("activeIndex")) {
+            switchActive(tabContentArr, localStorage.getItem("activeIndex"));
+            switchActive(btnTabArr, localStorage.getItem("activeIndex"));
+            // console.log(localStorage.getItem("activeIndex"));
+        }
+
         // 切換active的元素
-        function switchActive(arrToSwitch, targetIndex){
-            arrToSwitch.forEach((arrEle)=>{
+        function switchActive(arrToSwitch, targetIndex) {
+            arrToSwitch.forEach((arrEle) => {
                 arrEle.classList.remove('active');
             });
             arrToSwitch[targetIndex].classList.add('active');
         }
+
+
     </script>
 </body>
 

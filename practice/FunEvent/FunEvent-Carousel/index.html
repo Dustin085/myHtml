@@ -36,14 +36,14 @@
         btnGoNext.addEventListener('click', (ev) => {
             let goNum = 1;
             let topNum = caroItemArr.length - 1;  // 長度跟index中間差1
-            activeIndex = circleNum(activeIndex, goNum, topNum);
+            activeIndex = cyclingNum(activeIndex, goNum, topNum);
             switchActive(caroItemArr, activeIndex);
         });
 
         btnGoPre.addEventListener('click', (ev) => {
             let goNum = -1;
             let topNum = caroItemArr.length - 1;
-            activeIndex = circleNum(activeIndex, goNum, topNum);
+            activeIndex = cyclingNum(activeIndex, goNum, topNum);
             switchActive(caroItemArr, activeIndex);
         });
 
@@ -56,17 +56,50 @@
             arrToSwitch[targetIndex].classList.add('active');
         }
 
-        // 循環botNum-topNum (ex.0-4, 若(fromNum + diff)等於5, 會循環回到0, 反之, 等於-1時, 會循環回到4)
-        function circleNum(fromNum, diff, topNum, botNum = 0) {
-            let finalNum = fromNum + diff;
-            if (finalNum > topNum) {
-                finalNum = botNum + (finalNum - topNum) - 1; // 額外減1才能回到正確的值
-            } else if (finalNum < botNum) {
-                finalNum = topNum - Math.abs(finalNum - botNum) + 1;
+        // 循環botNum-topNum
+        // 1. 要移動的步數diff % 區間長度 = 真正要移動的步數
+        // 2. 從fromNum開始移動，移動到超出區間範圍就要回到另一端
+        // 3. 做序數修正
+        // 參數名稱 => fromNum: 開始數字，diff: 要移動的步數，topNum, botNum: 循環區間最大(小)值
+        function cyclingNum(fromNum, diff, topNum, botNum = 0) {
+            // 循環數字的區間長度，大減小後+1才會是正確的長度
+            let numLength = topNum - botNum + 1;
+            let result = 0;
+            // 當result超過範圍的時候應該要立刻回到另一端並算做一次計數，然而在我們的計算過程中這個計數被忽略了，所以要校正
+            // 例如，假設現在區間範圍是-1~4，當從4再往上加1的時候應該要直接變成-1，但我們的計算會將他算成4+1=5，所以要-1做校正
+            const ordinalCorrect = 1;
+            // 往前或後移動的步數
+            let move = diff % numLength;
+            result = fromNum + move;
+            // 超出移動範圍就循環
+            if (result > topNum) {
+                result = botNum + (result - topNum) - ordinalCorrect;
+            } else if (result < botNum) {
+                result = topNum - (botNum - result) + ordinalCorrect;
             }
-            return finalNum;
+            return result;
         }
-        // 之後改寫成用取餘數的方法
+        
+        console.log(cyclingNum(4, 12, 4));
+        console.log(cyclingNum(4, 12, 6, -1));
+
+        // if (order >= 0) {
+        //     result = botNum + order;
+        // } else if (order < 0) {
+        //     result = topNum - order;
+        // }else{
+        //     result += diff;
+        // }
+
+        // function circleNum(fromNum, diff, topNum, botNum = 0) {
+        //     let finalNum = fromNum + diff;
+        //     if (finalNum > topNum) {
+        //         finalNum = botNum + (finalNum - topNum) - 1; // 額外減1才能回到正確的值
+        //     } else if (finalNum < botNum) {
+        //         finalNum = topNum - Math.abs(finalNum - botNum) + 1;
+        //     }
+        //     return finalNum;
+        // }
     </script>
 </body>
 
