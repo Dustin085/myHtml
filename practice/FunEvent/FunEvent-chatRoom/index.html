@@ -17,15 +17,25 @@
                     <p>FunEvent 客服</p>
                 </div>
             </div>
-            <div class="chatroom__body"></div>
+            <div id="chatroom__body" class="chatroom__body">
+                <div class="chatroom__msg" id="chatroom__msg01">
+                    <div class="avatar"></div>
+                    <div class="content--container">
+                        <div class="name"><p>FunEvent 小幫手</p></div>
+                        <div class="text"><p>您好，我是FunEvent小幫手。<br>您今天好嗎？<br>很明顯我是用來湊字數的。<br>對於湊字數我還是略有涉略的。</p></div>
+                    </div>
+                </div>
+            </div>
             <div class="chatroom__footer">
                 <div class="chatroom__plusicon"></div>
-                <textarea rows="1" class="chatroom__input" placeholder="想問甚麼呢？"></textarea>
-                <button class="chatroom__btn" type="button">送出</button>
+                <textarea rows="1" id="chatroom__input" class="chatroom__input" placeholder="想問甚麼呢？"></textarea>
+                <button id="chatroom__btn" class="chatroom__btn" type="button">送出</button>
             </div>
         </div>
     </section>
-
+    
+    <!-- 不把.js放這邊的話會抓不到DOM元素 -->
+    <script src="./js/chatRoom.js"></script>
 </body>
 
 </html>
