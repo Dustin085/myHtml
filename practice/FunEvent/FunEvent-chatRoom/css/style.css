@@ -105,17 +105,22 @@ a {
 .chatroom__body {
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    /* 因為不明原因，使用flex-end會讓卷軸無法產生，故改用第一個元素給margin-top:auto */
+    /* justify-content: flex-end; */
     padding: 10px;
     height: 100%;
     background-color: var(--chatroombody-c);
-    overflow: hidden;
+    overflow: auto;
 }
 
 .chatroom__msg {
     display: flex;
     align-items: flex-end;
-    width: 100%;
+}
+
+.chatroom__msg.firstmsg{
+    /* 第一個元素給margin-top:auto可以把訊息往下推 */
+    margin-top: auto;
 }
 
 .chatroom__msg .avatar {
@@ -125,9 +130,19 @@ a {
     margin-right: 5px;
 }
 
-#chatroom__msg01 .avatar {
+.chatroom__msg.fromFunEvent .avatar {
     background-image: url(../images/20200920\ bluehairgirl.png);
     background-size: cover;
+}
+
+.chatroom__msg.fromUser{
+    align-self: flex-end;
+    flex-direction: row-reverse;
+}
+
+.chatroom__msg.fromUser .content--container{
+    display: flex;
+    align-items: flex-end;
 }
 
 .chatroom__msg .content--container{
@@ -142,6 +157,7 @@ a {
 }
 
 .chatroom__msg .text {
+    /* width: 100%; */
     font-size: .9rem;
     padding: 10px;
     border-radius: 20px;
