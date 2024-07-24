@@ -8,8 +8,8 @@ console.log('Hi ! you linked chatRoom.js');
 // 6. 把兩人的訊息分邊 OK 分成fromUser跟fromFunEvent
 // 7. 開始製作ChatRoom物件樣版(class) NO 不需要
 // TODO list
-// 1. 加上一個送出新訊息之後自動卷軸到最下方
-// 2. 修正文字訊息過長不會自動換行的問題
+// 1. 加上一個送出新訊息之後自動卷軸到最下方 OK function scrollBack
+// 2. 修正文字訊息過長不會自動換行的問題 OK word-break: break-all; 要設定最大寬度，然後好幾個元素都要加上width: 100%讓文字訊息有足夠的寬度
 
 // let crBtnEle = document.getElementById('chatroom__btn');
 let crBtnEle = document.querySelector('#chatroom__btn');
@@ -17,7 +17,7 @@ let crInputEle = document.querySelector('#chatroom__input');
 let crBodyEle = document.querySelector('#chatroom__body')
 
 // 按下按鈕後，把使用者輸入的文字包裝成html元素放到聊天室內
-function creatNewMsg(btnEle, inputEle, crBodyEle) {
+function addChatRoomListener(btnEle, inputEle, crBodyEle) {
     btnEle.addEventListener("click", () => {
         // crBodyEle.innerHTML += `<div class="chatroom__msg" id="chatroom__msg01"><div class="avatar"></div><div class="content--container"><div class="name"><p>FunEvent 小幫手</p></div><div class="text"><p>${inputEle.value}</p></div></div></div>`;
         // 輸入的文字
@@ -36,6 +36,8 @@ function creatNewMsg(btnEle, inputEle, crBodyEle) {
                 </div>
                 </div>`;
             inputEle.value = '';
+            // 自動卷軸到最下面
+            scrollBack(crBodyEle);
         }
     });
     // 在input區域按下enter直接觸發btn點擊事件
@@ -46,8 +48,12 @@ function creatNewMsg(btnEle, inputEle, crBodyEle) {
             btnEle.click();
         }
     });
+    // 卷軸自動回到最下方
+    function scrollBack(scrollEle) {
+        scrollEle.scrollTo(0, scrollEle.scrollHeight - scrollEle.clientHeight);
+    }
 }
-creatNewMsg(crBtnEle, crInputEle, crBodyEle);
+addChatRoomListener(crBtnEle, crInputEle, crBodyEle);
 
 
 
