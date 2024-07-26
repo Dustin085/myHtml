@@ -194,6 +194,9 @@ section {
 } */
 
 .box__list .item {
+    /* 有flex才能限制內容不要超出.item的範圍，img的object-fit */
+    display: flex;
+    flex-direction: column;
     margin-bottom: 50px;
     height: 300px;
     width: 350px;

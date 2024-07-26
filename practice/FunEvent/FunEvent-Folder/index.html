@@ -43,7 +43,7 @@
     </main>
     <script>
         // 切換頁籤
-        // Array.from轉換成陣列
+        // Array.from => 類似陣列的物件轉換成陣列
         let btnTabArr = Array.from(document.getElementsByClassName('btn__tab'));
         let tabContentArr = Array.from(document.getElementsByClassName('tab__content'));
         // 加eventListener
@@ -82,14 +82,15 @@
             // console.log(localStorage.getItem("activeIndex"));
         }
 
-        // 切換active的元素
+        // 切換active的元素，arrToSwitch => 要修改的dom元素陣列，targetIndex => 要被加上active的index
         function switchActive(arrToSwitch, targetIndex) {
+            // 清除陣列中每個item的class: active
             arrToSwitch.forEach((arrEle) => {
                 arrEle.classList.remove('active');
             });
+            // 為陣列中指定index的元素加上class: active
             arrToSwitch[targetIndex].classList.add('active');
         }
-
 
     </script>
 </body>

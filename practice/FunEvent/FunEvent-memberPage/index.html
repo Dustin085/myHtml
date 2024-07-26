@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <main>
+        <section id="user_center">
+            <!-- 側邊列 -->
+            <div class="user_center-sidebar">
+                <!-- 會員頭貼與名字 -->
+                <div class="user_intro">
+                    <figure class="user_pic"><img src="./images/memberPic.svg" alt=""></figure>
+                    <h3 class="user_name">會員名字</h3>
+                    <a href="#" class="edit_link">管理個人資料</a>
+                </div>
+                <!-- menu -->
+                <div class="menu">
+                    <!-- div.myEvent_box>h4+div.link_box*3>div.icon+a -->
+                    <div class="list_box">
+                        <h4>我的活動</h4>
+                        <div class="link_box">
+                            <div class="icon"></div>
+                            <a href="#">我的票卷</a>
+                        </div>
+                        <div class="link_box">
+                            <div class="icon"></div>
+                            <a href="#">Fun點數</a>
+                        </div>
+                        <div class="link_box">
+                            <div class="icon"></div>
+                            <a href="#">Fun折價卷</a>
+                        </div>
+                    </div>
+
+                    <div class="list_box">
+                        <h4>帳號設定</h4>
+                        <div class="link_box">
+                            <div class="icon"></div>
+                            <a href="#">帳號管理</a>
+                        </div>
+                        <div class="link_box">
+                            <div class="icon"></div>
+                            <a href="#">我的評論</a>
+                        </div>
+                        <div class="link_box">
+                            <div class="icon"></div>
+                            <a href="#">我的蒐藏</a>
+                        </div>
+                        <div class="link_box">
+                            <div class="icon"></div>
+                            <a href="#">訊息管理</a>
+                        </div>
+                    </div>
+
+                    <div class="list_box">
+                        <h4>主辦中心</h4>
+                        <div class="link_box">
+                            <div class="icon"></div>
+                            <a href="#">帳號切換</a>
+                        </div>
+                    </div>
+
+                    <button class="logout_btn">登出</button>
+                </div>
+            </div>
+            <!-- 內容區 -->
+            <div class="user_center-content account_manage-content">
+                <div class="title_box">
+                    <h2 class="title">帳號管理</h2>
+                    <p>個人資料將嚴格保密且不公開，僅用於FunEvent提供個人化服務</p>
+                </div>
+                <ul class="tab_box">
+                    <li class="tab">基本資料</li>
+                    <li class="tab">綁定帳號</li>
+                    <li class="tab">信用卡資料</li>
+                </ul>
+                <form action="" method="post" name="form__member-edit" id="form__member--edit" title="會員資料修改表單">
+                    <div class="name_box">
+                        <label for="username">姓氏*</label>
+                        <input type="text" name="username" id="username" title="姓名欄位" placeholder="請輸入姓名" required>
+                        <label for="username">名字*</label>
+                        <input type="text" name="username" id="username" title="姓名欄位" placeholder="請輸入姓名" required>
+                    </div>
+                    <label for="birthday">生日*</label>
+                    <input type="date" name="birthday" id="birthday" title="生日欄位" placeholder="請選擇生日" required>
+                    <label for="gender">性別</label>
+                    <select name="gender" id="gender" title="性別選項">
+                        <option value="">請選擇</option>
+                        <option value="生理男">生理男</option>
+                        <option value="生理女">生理女</option>
+                    </select>
+                    <label for="mobile">手機號碼*</label>
+                    <input type="tel" name="mobile" id="mobile" title="手機號碼欄為" placeholder="共10碼" maxlength="10" required>
+                    <label for="email">電子信箱*</label>
+                    <input type="email" name="email" id="email" title="email欄位" placeholder="請輸入電子郵件信箱" required>
+
+                    <input type="submit" name="btn__submit--member" id="btn__submit--member" title="會員資料修改送出" value="儲存">
+                </form>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
