@@ -52,6 +52,7 @@ a {
     color: var(--deep);
 }
 
+/* 聊天室(chatRoom)區 */
 /* 變數區 */
 :root {
     --chatroom-c: rgb(248, 116, 14);
@@ -130,10 +131,6 @@ a {
     width: 36px;
     border-radius: 99px;
     margin-right: 5px;
-}
-
-.chatroom__msg.fromFunEvent .avatar {
-    background-image: url(../images/20200920\ bluehairgirl.png);
     background-size: cover;
 }
 
