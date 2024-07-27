@@ -42,7 +42,7 @@ button {
 }
 
 /* 會員中心頁面區 */
-#user_center {
+#member-center {
     height: 120vh;
     display: flex;
     align-items: flex-start;
@@ -51,7 +51,7 @@ button {
 }
 
 /* 會員中心側邊列區 */
-.user_center-sidebar {
+.member-center-sidebar {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -61,8 +61,8 @@ button {
     overflow: hidden;
 }
 
-/* user_intro */
-.user_intro {
+/* member-center-sidebar__intro */
+.member-center-sidebar__intro {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -71,21 +71,21 @@ button {
     background-color: #c6c6c6;
 }
 
-.user_intro .user_pic {
+.member-center-sidebar__intro .member-center-sidebar__pic {
     margin-bottom: 20px;
 }
 
-.user_intro .user_pic img {
+.member-center-sidebar__intro .member-center-sidebar__pic img {
     height: 100px;
     width: 100px;
 }
 
-.user_intro .user_name {
+.member-center-sidebar__intro .member-center-sidebar__name {
     font-weight: bold;
 }
 
-/* user_center_sidebar menu */
-.user_center-sidebar .menu {
+/* member-center_sidebar member-center-sidebar__menu */
+.member-center-sidebar .member-center-sidebar__menu {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -95,7 +95,7 @@ button {
     font-size: 16px;
 }
 
-.user_center-sidebar .menu .list_box {
+.member-center-sidebar .member-center-sidebar__menu .member-center-sidebar__list-box {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -104,27 +104,27 @@ button {
     border-bottom: solid 1px #d9d9d9;
 }
 
-.user_center-sidebar .menu .list_box h4,
-.user_center-sidebar .menu .list_box .link_box>* {
+.member-center-sidebar .member-center-sidebar__menu .member-center-sidebar__list-box h4,
+.member-center-sidebar .member-center-sidebar__menu .member-center-sidebar__list-box .member-center-sidebar__link-box>* {
     margin-bottom: 13px;
 }
 
-.user_center-sidebar .menu .list_box h4 {
+.member-center-sidebar .member-center-sidebar__menu .member-center-sidebar__list-box h4 {
     font-weight: bold;
 }
 
-.user_center-sidebar .menu .list_box .link_box {
+.member-center-sidebar .member-center-sidebar__menu .member-center-sidebar__list-box .member-center-sidebar__link-box {
     display: flex;
 }
 
-.user_center-sidebar .menu .list_box .link_box .icon {
+.member-center-sidebar .member-center-sidebar__menu .member-center-sidebar__list-box .member-center-sidebar__link-box .icon--small {
     width: 24px;
     height: 24px;
     background-image: url(../images/member_center_icon.svg);
     margin-right: 16px;
 }
 
-.user_center-sidebar .menu .logout_btn{
+.member-center-sidebar .member-center-sidebar__menu .btn-logout--large{
     width: 220px;
     height: 40px;
     background-color: #d9d9d9;
@@ -134,7 +134,7 @@ button {
 }
 
 /* 會員中心帳號管理區 */
-.user_center-content {
+.member-center-content {
     align-self: stretch;
     flex-grow: 1;
     border-radius: 10px;
@@ -142,28 +142,32 @@ button {
 }
 
 /* 帳號管理修改基本資料頁籤 */
-.user_center-content.account_manage-content{
+.member-center-content.account-manage-content{
     padding: 50px;
 }
 
-.account_manage-content .title_box{
+.account-manage-content .account-manage__title-box{
     margin-bottom: 40px;
 }
 
-.account_manage-content .title{
+.account-manage-content .account-manage__title{
     margin-bottom: 10px;
 }
 
-.account_manage-content .tab_box{
+.account-manage-content .account-manage__tab-box{
     display: flex;
     border-bottom: solid 1px black;
 }
 
-.account_manage-content .tab{
+.account-manage-content .tab{
     margin-right: 25px;
 }
 
-.account_manage-content form{
+.account-manage__tab-btn{
+    font-size: 16px;
+}
+
+.account-manage-content form{
     display: flex;
     flex-direction: column;
     

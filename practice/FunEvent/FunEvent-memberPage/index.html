@@ -10,98 +10,112 @@
 
 <body>
     <main>
-        <section id="user_center">
+        <section id="member-center">
             <!-- 側邊列 -->
-            <div class="user_center-sidebar">
+            <div class="member-center-sidebar">
                 <!-- 會員頭貼與名字 -->
-                <div class="user_intro">
-                    <figure class="user_pic"><img src="./images/memberPic.svg" alt=""></figure>
-                    <h3 class="user_name">會員名字</h3>
-                    <a href="#" class="edit_link">管理個人資料</a>
+                <div class="member-center-sidebar__intro">
+                    <figure class="member-center-sidebar__pic"><img src="./images/memberPic.svg" alt=""></figure>
+                    <h3 class="member-center-sidebar__name">會員名字</h3>
+                    <a href="#" class="member-center-sidebar__edit-link">管理個人資料</a>
                 </div>
-                <!-- menu -->
-                <div class="menu">
-                    <!-- div.myEvent_box>h4+div.link_box*3>div.icon+a -->
-                    <div class="list_box">
+                <!-- member-center-sidebar__menu -->
+                <div class="member-center-sidebar__menu">
+                    <!-- div.myEvent_box>h4+div.member-center-sidebar__link-box*3>div.icon--small+a -->
+                    <div class="member-center-sidebar__list-box">
                         <h4>我的活動</h4>
-                        <div class="link_box">
-                            <div class="icon"></div>
+                        <div class="member-center-sidebar__link-box">
+                            <div class="icon--small"></div>
                             <a href="#">我的票卷</a>
                         </div>
-                        <div class="link_box">
-                            <div class="icon"></div>
+                        <div class="member-center-sidebar__link-box">
+                            <div class="icon--small"></div>
                             <a href="#">Fun點數</a>
                         </div>
-                        <div class="link_box">
-                            <div class="icon"></div>
+                        <div class="member-center-sidebar__link-box">
+                            <div class="icon--small"></div>
                             <a href="#">Fun折價卷</a>
                         </div>
                     </div>
 
-                    <div class="list_box">
+                    <div class="member-center-sidebar__list-box">
                         <h4>帳號設定</h4>
-                        <div class="link_box">
-                            <div class="icon"></div>
+                        <div class="member-center-sidebar__link-box">
+                            <div class="icon--small"></div>
                             <a href="#">帳號管理</a>
                         </div>
-                        <div class="link_box">
-                            <div class="icon"></div>
+                        <div class="member-center-sidebar__link-box">
+                            <div class="icon--small"></div>
                             <a href="#">我的評論</a>
                         </div>
-                        <div class="link_box">
-                            <div class="icon"></div>
+                        <div class="member-center-sidebar__link-box">
+                            <div class="icon--small"></div>
                             <a href="#">我的蒐藏</a>
                         </div>
-                        <div class="link_box">
-                            <div class="icon"></div>
+                        <div class="member-center-sidebar__link-box">
+                            <div class="icon--small"></div>
                             <a href="#">訊息管理</a>
                         </div>
                     </div>
 
-                    <div class="list_box">
+                    <div class="member-center-sidebar__list-box">
                         <h4>主辦中心</h4>
-                        <div class="link_box">
-                            <div class="icon"></div>
+                        <div class="member-center-sidebar__link-box">
+                            <div class="icon--small"></div>
                             <a href="#">帳號切換</a>
                         </div>
                     </div>
 
-                    <button class="logout_btn">登出</button>
+                    <button class="btn-logout--large">登出</button>
                 </div>
             </div>
             <!-- 內容區 -->
-            <div class="user_center-content account_manage-content">
-                <div class="title_box">
-                    <h2 class="title">帳號管理</h2>
+            <div class="member-center-content account-manage-content">
+                <div class="account-manage__title-box">
+                    <h2 class="account-manage__title">帳號管理</h2>
                     <p>個人資料將嚴格保密且不公開，僅用於FunEvent提供個人化服務</p>
                 </div>
-                <ul class="tab_box">
-                    <li class="tab">基本資料</li>
-                    <li class="tab">綁定帳號</li>
-                    <li class="tab">信用卡資料</li>
+                <!-- tab按鈕 -->
+                <ul class="account-manage__tab-box">
+                    <li class="tab"><button class="account-manage__tab-btn">基本資料</button></li>
+                    <li class="tab"><button class="account-manage__tab-btn">綁定帳號</button></li>
+                    <li class="tab"><button class="account-manage__tab-btn">信用卡資料</button></li>
                 </ul>
-                <form action="" method="post" name="form__member-edit" id="form__member--edit" title="會員資料修改表單">
-                    <div class="name_box">
-                        <label for="username">姓氏*</label>
-                        <input type="text" name="username" id="username" title="姓名欄位" placeholder="請輸入姓名" required>
-                        <label for="username">名字*</label>
-                        <input type="text" name="username" id="username" title="姓名欄位" placeholder="請輸入姓名" required>
-                    </div>
-                    <label for="birthday">生日*</label>
-                    <input type="date" name="birthday" id="birthday" title="生日欄位" placeholder="請選擇生日" required>
-                    <label for="gender">性別</label>
-                    <select name="gender" id="gender" title="性別選項">
-                        <option value="">請選擇</option>
-                        <option value="生理男">生理男</option>
-                        <option value="生理女">生理女</option>
-                    </select>
-                    <label for="mobile">手機號碼*</label>
-                    <input type="tel" name="mobile" id="mobile" title="手機號碼欄為" placeholder="共10碼" maxlength="10" required>
-                    <label for="email">電子信箱*</label>
-                    <input type="email" name="email" id="email" title="email欄位" placeholder="請輸入電子郵件信箱" required>
+                <!-- tab內容 -->
+                <ul class="account-manage__tab-content-box">
+                    <li class="account-manage__tab-content member-basic-info">
+                        <form action="" method="post" name="form__member-edit" id="form__member--edit" title="會員資料修改表單">
+                            <div class="member-basic-info__name-box">
+                                <label for="membername">姓氏*</label>
+                                <input type="text" name="membername" id="membername" title="姓名欄位" placeholder="請輸入姓名"
+                                    required>
+                                <label for="membername">名字*</label>
+                                <input type="text" name="membername" id="membername" title="姓名欄位" placeholder="請輸入姓名"
+                                    required>
+                            </div>
+                            <label for="birthday">生日*</label>
+                            <input type="date" name="birthday" id="birthday" title="生日欄位" placeholder="請選擇生日" required>
+                            <label for="gender">性別</label>
+                            <select name="gender" id="gender" title="性別選項">
+                                <option value="">請選擇</option>
+                                <option value="生理男">生理男</option>
+                                <option value="生理女">生理女</option>
+                            </select>
+                            <label for="mobile">手機號碼*</label>
+                            <input type="tel" name="mobile" id="mobile" title="手機號碼欄為" placeholder="共10碼" maxlength="10"
+                                required>
+                            <label for="email">電子信箱*</label>
+                            <input type="email" name="email" id="email" title="email欄位" placeholder="請輸入電子郵件信箱"
+                                required>
+                            <!-- 按鈕 -->
+                            <input type="submit" name="btn__submit--member" id="btn__submit--member" title="會員資料修改送出"
+                                value="儲存">
+                        </form>
+                    </li>
+                    <li class="account-manage-tab-content"></li>
+                    <li class="account-manage-tab-content"></li>
+                </ul>
 
-                    <input type="submit" name="btn__submit--member" id="btn__submit--member" title="會員資料修改送出" value="儲存">
-                </form>
             </div>
         </section>
     </main>
