@@ -41,11 +41,40 @@ button {
     background-color: transparent;
 }
 
+input,
+label {
+    display: block;
+}
+
+/* 共用區 */
+.split-line {
+    width: 100%;
+    height: 1px;
+    background-color: black;
+}
+
+input {
+    /* 用來校正placeholder */
+    position: relative;
+}
+
+input:focus {
+    outline: none;
+}
+
+input::placeholder {
+    /* 垂直置中 */
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
 /* 會員中心頁面區 */
 #member-center {
     height: 120vh;
     display: flex;
     align-items: flex-start;
+    justify-content: center;
     padding: 80px 150px;
     background-color: #f5f5f5;
 }
@@ -124,7 +153,7 @@ button {
     margin-right: 16px;
 }
 
-.member-center-sidebar .member-center-sidebar__menu .btn-logout--large{
+.member-center-sidebar .member-center-sidebar__menu .btn-logout--large {
     width: 220px;
     height: 40px;
     background-color: #d9d9d9;
@@ -139,37 +168,83 @@ button {
     flex-grow: 1;
     border-radius: 10px;
     background-color: #ffffff;
+    width: 60%;
+    max-width: 850px;
 }
 
 /* 帳號管理修改基本資料頁籤 */
-.member-center-content.account-manage-content{
-    padding: 50px;
+.member-center-content.account-manage-content {
+    padding: 50px 26px;
 }
 
-.account-manage-content .account-manage__title-box{
+.account-manage-content .account-manage__title-box {
     margin-bottom: 40px;
 }
 
-.account-manage-content .account-manage__title{
+.account-manage-content .account-manage__title {
     margin-bottom: 10px;
 }
 
-.account-manage-content .account-manage__tab-box{
+.account-manage-content .account-manage__tab-box {
     display: flex;
-    border-bottom: solid 1px black;
+    padding-bottom: 8px;
 }
 
-.account-manage-content .tab{
+.account-manage-content .tab {
     margin-right: 25px;
 }
 
-.account-manage__tab-btn{
+.account-manage__tab-btn {
     font-size: 16px;
 }
 
-.account-manage-content form{
-    display: flex;
-    flex-direction: column;
-    
+.account-manage__tab-content-box{
+    margin-top: 25px;
 }
 
+.member-info-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 5px;
+}
+
+.member-info-form input,
+.member-info-form select {
+    width: 300px;
+    height: 48px;
+    margin-top: 10px;
+    padding: 10px 0 10px 14px;
+    border: solid 1px #d9d9d9;
+    border-radius: 10px;
+    font-size: 16px;
+    line-height: 1em;
+}
+
+.account-manage__title-box,
+.account-manage__tab-box,
+.member-info-form input,
+.member-info-form select,
+.member-info-form label {
+    margin-left: 22px;
+}
+
+.account-manage-content form .split-line {
+    margin: 22px 0 22px 0;
+}
+
+.member-info__name-box {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.member-info__name-box :first-child {
+    margin-right: 22px;
+}
+
+#member-info-edit-btn {
+    align-self: flex-end;
+    width: 92px;
+    height: 48px;
+    padding: 0;
+}

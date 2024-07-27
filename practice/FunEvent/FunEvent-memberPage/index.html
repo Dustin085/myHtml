@@ -81,40 +81,58 @@
                     <li class="tab"><button class="account-manage__tab-btn">綁定帳號</button></li>
                     <li class="tab"><button class="account-manage__tab-btn">信用卡資料</button></li>
                 </ul>
+                <div class="split-line"></div>
                 <!-- tab內容 -->
-                <ul class="account-manage__tab-content-box">
-                    <li class="account-manage__tab-content member-basic-info">
-                        <form action="" method="post" name="form__member-edit" id="form__member--edit" title="會員資料修改表單">
-                            <div class="member-basic-info__name-box">
-                                <label for="membername">姓氏*</label>
-                                <input type="text" name="membername" id="membername" title="姓名欄位" placeholder="請輸入姓名"
+                <div class="account-manage__tab-content-box">
+                    <div class="account-manage__tab-content member-info">
+                        <div class="member-info-content">
+
+                        </div>
+                        <div class="member-info-edit">
+                            <form class="member-info-form" action="" method="post" name="form__member-edit"
+                                id="form__member--edit" title="會員資料修改表單">
+                                <div class="member-info__name-box">
+                                    <div>
+                                        <label for="membername">姓氏*</label>
+                                        <input type="text" name="memberlastname" id="membername" title="姓名欄位"
+                                            placeholder="請輸入姓名" required>
+                                    </div>
+                                    <div>
+                                        <label for="membername">名字*</label>
+                                        <input type="text" name="memberfirstname" id="membername" title="姓名欄位"
+                                            placeholder="請輸入姓名" required>
+                                    </div>
+                                </div>
+                                <div class="split-line"></div>
+                                <label for="birthday">生日*</label>
+                                <input type="date" name="birthday" id="birthday" title="生日欄位" placeholder="請選擇生日"
                                     required>
-                                <label for="membername">名字*</label>
-                                <input type="text" name="membername" id="membername" title="姓名欄位" placeholder="請輸入姓名"
+                                <div class="split-line"></div>
+                                <label for="gender">性別</label>
+                                <select name="gender" id="gender" title="性別選項">
+                                    <option value="">請選擇</option>
+                                    <option value="生理男">生理男</option>
+                                    <option value="生理女">生理女</option>
+                                </select>
+                                <div class="split-line"></div>
+                                <label for="mobile">手機號碼*</label>
+                                <input type="tel" name="mobile" id="mobile" title="手機號碼欄為" placeholder="共10碼"
+                                    maxlength="10" required>
+                                <div class="split-line"></div>
+                                <label for="email">電子信箱*</label>
+                                <input type="email" name="email" id="email" title="email欄位" placeholder="請輸入電子郵件信箱"
                                     required>
-                            </div>
-                            <label for="birthday">生日*</label>
-                            <input type="date" name="birthday" id="birthday" title="生日欄位" placeholder="請選擇生日" required>
-                            <label for="gender">性別</label>
-                            <select name="gender" id="gender" title="性別選項">
-                                <option value="">請選擇</option>
-                                <option value="生理男">生理男</option>
-                                <option value="生理女">生理女</option>
-                            </select>
-                            <label for="mobile">手機號碼*</label>
-                            <input type="tel" name="mobile" id="mobile" title="手機號碼欄為" placeholder="共10碼" maxlength="10"
-                                required>
-                            <label for="email">電子信箱*</label>
-                            <input type="email" name="email" id="email" title="email欄位" placeholder="請輸入電子郵件信箱"
-                                required>
-                            <!-- 按鈕 -->
-                            <input type="submit" name="btn__submit--member" id="btn__submit--member" title="會員資料修改送出"
-                                value="儲存">
-                        </form>
-                    </li>
-                    <li class="account-manage-tab-content"></li>
-                    <li class="account-manage-tab-content"></li>
-                </ul>
+                                <div class="split-line"></div>
+                                <!-- 按鈕 -->
+                                <input type="submit" name="member-info-edit-btn" id="member-info-edit-btn"
+                                    title="會員資料修改送出" value="儲存">
+                            </form>
+                        </div>
+
+                    </div>
+                    <div class="account-manage-tab-content"></div>
+                    <div class="account-manage-tab-content"></div>
+                </div>
 
             </div>
         </section>
