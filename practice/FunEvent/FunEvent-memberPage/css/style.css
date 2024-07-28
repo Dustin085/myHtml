@@ -71,7 +71,7 @@ input::placeholder {
 
 /* 會員中心頁面區 */
 #member-center {
-    height: 120vh;
+    min-height: 100vh;
     display: flex;
     align-items: flex-start;
     justify-content: center;
@@ -162,7 +162,7 @@ input::placeholder {
     cursor: pointer;
 }
 
-/* 會員中心帳號管理區 */
+/* 會員中心主要內容共用區 */
 .member-center-content {
     align-self: stretch;
     flex-grow: 1;
@@ -172,7 +172,7 @@ input::placeholder {
     max-width: 850px;
 }
 
-/* 帳號管理修改基本資料頁籤 */
+/* 帳號管理主要內容 */
 .member-center-content.account-manage-content {
     padding: 50px 26px;
 }
@@ -198,8 +198,52 @@ input::placeholder {
     font-size: 16px;
 }
 
-.account-manage__tab-content-box{
+/* 帳號管理頁籤內容 */
+.account-manage__tab-content-box {
     margin-top: 25px;
+}
+
+/* 會員基本資料 */
+.member-info-content{
+    display: none;
+}
+
+.member-info-content.active {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 5px;
+}
+
+.member-info-content .split-line {
+    margin: 22px 0 22px 0;
+}
+
+.member-info-content p {
+    margin-top: 10px;
+}
+
+#member-info-edit-btn,
+#member-info-save-btn {
+    align-self: flex-end;
+    width: 92px;
+    height: 48px;
+    padding: 0;
+    border: solid 1px #d9d9d9;
+    border-radius: 10px;
+    font-size: 16px;
+    /* line-height: 1em; */
+    background-color: #c6c6c6;
+    color: #ffffff;
+}
+
+/* 會員基本資料修改表單 */
+.member-info-edit {
+    display: none;
+}
+
+.member-info-edit.active {
+    display: block;
 }
 
 .member-info-form {
@@ -225,7 +269,8 @@ input::placeholder {
 .account-manage__tab-box,
 .member-info-form input,
 .member-info-form select,
-.member-info-form label {
+.member-info-form label,
+.member-info-content p {
     margin-left: 22px;
 }
 
@@ -240,11 +285,4 @@ input::placeholder {
 
 .member-info__name-box :first-child {
     margin-right: 22px;
-}
-
-#member-info-edit-btn {
-    align-self: flex-end;
-    width: 92px;
-    height: 48px;
-    padding: 0;
 }

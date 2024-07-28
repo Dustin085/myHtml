@@ -85,10 +85,26 @@
                 <!-- tab內容 -->
                 <div class="account-manage__tab-content-box">
                     <div class="account-manage__tab-content member-info">
-                        <div class="member-info-content">
-
+                        <div class="member-info-content active" id="member-info-content">
+                            <p>姓名</p>
+                            <p id="membername">王曉明</p>
+                            <div class="split-line"></div>
+                            <p>生日</p>
+                            <p id="birthday">1999-9-19</p>
+                            <div class="split-line"></div>
+                            <p>性別</p>
+                            <p id="gender">生理男</p>
+                            <div class="split-line"></div>
+                            <p>手機號碼</p>
+                            <p id="phone-number">0999999999</p>
+                            <div class="split-line"></div>
+                            <p>電子信箱</p>
+                            <p id="email">testtest@gmail.com</p>
+                            <div class="split-line"></div>
+                            <button type="button" id="member-info-edit-btn">編輯</button>
                         </div>
-                        <div class="member-info-edit">
+                        <!-- 加上active來啟用 -->
+                        <div class="member-info-edit" id="member-info-edit">
                             <form class="member-info-form" action="" method="post" name="form__member-edit"
                                 id="form__member--edit" title="會員資料修改表單">
                                 <div class="member-info__name-box">
@@ -124,7 +140,7 @@
                                     required>
                                 <div class="split-line"></div>
                                 <!-- 按鈕 -->
-                                <input type="submit" name="member-info-edit-btn" id="member-info-edit-btn"
+                                <input type="submit" name="member-info-edit-btn" id="member-info-save-btn"
                                     title="會員資料修改送出" value="儲存">
                             </form>
                         </div>
@@ -137,6 +153,7 @@
             </div>
         </section>
     </main>
+    <script src="./js/memberPage.js"></script>
 </body>
 
 </html>

@@ -1,4 +1,4 @@
-console.log('Hi ! you linked chatRoom.js');
+console.log('Hi ! you have linked chatRoom.js');
 // 製作聊天室
 // 1. 寫好html和css樣式(約1hr) OK
 // 2. 做一個假訊息在html以確定樣式(約20mins) OK
