@@ -66,7 +66,7 @@
                         </div>
                     </div>
 
-                    <button class="btn-logout--large">登出</button>
+                    <button class="btn-logout--large" type="button">登出</button>
                 </div>
             </div>
             <!-- 內容區 -->
@@ -140,8 +140,12 @@
                                     required>
                                 <div class="split-line"></div>
                                 <!-- 按鈕 -->
-                                <input type="submit" name="member-info-edit-btn" id="member-info-save-btn"
-                                    title="會員資料修改送出" value="儲存">
+                                <div class="member-info-btn-box">
+                                    <button type="button" id="member-info-cancel-btn">取消</button>
+                                    <input type="submit" name="member-info-edit-btn" id="member-info-save-btn"
+                                        title="會員資料修改送出" value="儲存">
+                                </div>
+
                             </form>
                         </div>
                     </div>

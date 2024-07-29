@@ -224,7 +224,8 @@ input::placeholder {
 }
 
 #member-info-edit-btn,
-#member-info-save-btn {
+#member-info-save-btn,
+#member-info-cancel-btn {
     align-self: flex-end;
     width: 92px;
     height: 48px;
@@ -285,4 +286,9 @@ input::placeholder {
 
 .member-info__name-box :first-child {
     margin-right: 22px;
+}
+
+.member-info-btn-box{
+    display: flex;
+    align-self: flex-end;
 }
