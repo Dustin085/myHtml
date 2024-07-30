@@ -69,6 +69,10 @@ input::placeholder {
     transform: translateY(-50%);
 }
 
+button{
+    cursor: pointer;
+}
+
 /* 會員中心頁面區 */
 #member-center {
     min-height: 100vh;
@@ -203,8 +207,16 @@ input::placeholder {
     margin-top: 25px;
 }
 
+.account-manage__tab-content {
+    display: none;
+}
+
+.account-manage__tab-content.active {
+    display: block;
+}
+
 /* 會員基本資料 */
-.member-info-content{
+.member-info-content {
     display: none;
 }
 
@@ -288,7 +300,80 @@ input::placeholder {
     margin-right: 22px;
 }
 
-.member-info-btn-box{
+.member-info-btn-box {
     display: flex;
     align-self: flex-end;
+}
+
+/* 會員綁定帳號binded-account 與 信用卡資料credit-card-info */
+
+.binded-account__wrap,
+.credit-card-info-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 5px 25px;
+}
+
+.binded-account-card{
+    display: flex;
+    align-items: center;
+    width: calc(50% - 17px);
+    border: solid 1px #d9d9d9;
+    border-radius: 10px;
+    padding: 13px 11px;
+    margin-bottom: 20px;
+}
+
+.credit-card-info-card{
+    display: flex;
+    align-items: center;
+    width: calc(50% - 17px);
+    border: solid 1px #d9d9d9;
+    border-radius: 10px;
+    padding: 13px 11px;
+}
+
+.binded-account-card:nth-child(odd),
+.credit-card-info-card:nth-child(odd) {
+    margin-right: 17px;
+}
+
+.binded-account-card__icon,
+.credit-card-info-card__icon {
+    width: 30px;
+    height: 30px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-right: 14px;
+}
+
+.binded-account-card__company-box,
+.credit-card-info-card__number {
+    flex-grow: 1;
+}
+
+.binded-account-card-btn,
+.credit-card-info-card-delete-btn {
+    width: 63px;
+    height: 34px;
+    border-radius: 20px;
+    border: solid 1px #757575;
+}
+
+.binded-account-card--binded .binded-account-card-btn,
+.credit-card-info-card--binded .credit-card-info-card-btn {
+    color: #ffffff;
+    background-color: #757575;
+}
+
+.credit-card-info-new-btn{
+    width: 106px;
+    height: 48px;
+    background-color: #c6c6c6;
+    color: #ffffff;
+    border-radius: 10px;
+    font-size: 16px;
 }
