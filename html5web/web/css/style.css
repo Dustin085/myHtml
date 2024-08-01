@@ -34,6 +34,47 @@
     --alpha-r-50: rgba(201, 174, 174, 0.5);
 }
 
+/* 捲軸樣式 */
+::-webkit-scrollbar {
+    /* 捲軸基底 */
+    width: 20px;
+    /* 高度用來調整水平捲軸 */
+    height: 20px;
+    background-color: var(--lesser-1);
+}
+
+::-webkit-scrollbar-button {
+    /* 捲軸按鈕(目前使用色塊) */
+    width: 10px;
+    height: 10px;
+    background-color: var(--lesser-4);
+}
+
+::-webkit-scrollbar-thumb {
+    /* 捲軸手柄 */
+    background-color: var(--lesser-3);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    /* 捲軸手柄 */
+    background-color: var(--lesser-5);
+}
+
+::-webkit-scrollbar-track {
+    /* 捲軸軌道 */
+    box-shadow: inset 0 0 6px var(--alpha-b-40);
+}
+
+::-webkit-scrollbar-corner {
+    /* 捲軸交界底角 */
+    background-color: var(--lesser-2);
+}
+
+::-webkit-resizer {
+    /* 多行文字欄位右下角的縮放按鈕 */
+    background-color: var(--lesser-4);
+}
+
 /* 重置所有標籤的樣式 */
 * {
     margin: 0;
@@ -398,7 +439,14 @@ video {
 }
 
 /* 關於我們區 */
+#about {
+    position: relative;
+    background-color: var(--lesser-2);
+}
+
 #about .content {
+    position: absolute;
+    z-index: 1;
     width: 65%;
     /* 高度%是抓父元素的相對高度(section#about => 100vh) */
     height: 100%;
@@ -407,13 +455,49 @@ video {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    /* 將背景影片模糊，必須與fiter: blur()分清楚 */
+    backdrop-filter: blur(5px);
 }
 
 #about p {
     width: 85%;
     height: 65vh;
+    padding-right: 1rem;
+    /* 推薦使用auto */
     overflow: auto;
 }
+
+#about video{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    /* 混合模式，與相片調色模式相同，可參考其 */
+    mix-blend-mode: overlay;
+    /* 濾鏡增加亮度降低對比度 */
+    filter: brightness(120%) contrast(80%);
+}
+
+/* 區塊捲軸 */
+#about p::-webkit-scrollbar{
+    background-color: transparent;
+}
+
+#about p::-webkit-scrollbar-thumb {
+    border-radius: 99px;
+    border: solid 1px var(--lesser-5);
+}
+
+#about p::-webkit-scrollbar-track {
+    border-radius: 99px;
+    border: solid 1px var(--lesser-5);
+}
+
+#about p::-webkit-scrollbar-button {
+    /* 若共用區有寫捲軸按鈕才要寫(讓btn消失) */
+    display: none;
+}
+
+
 
 /* 聯絡我們區 */
 #contact {

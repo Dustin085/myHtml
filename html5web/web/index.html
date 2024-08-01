@@ -7,6 +7,9 @@
     <title>Web花市-html5web</title>
     <!-- 手動連結icon，在live sever上會自動抓根目錄的favicon.ico -->
     <link rel="icon" href="./favicon.ico">
+    <!-- 換圖輪播css -->
+    <link rel="stylesheet" href="./css/carousel.css">
+    <!-- 自訂的css -->
     <link rel="stylesheet" href="./css/style.css">
 </head>
 
@@ -54,7 +57,103 @@
         </nav>
     </header>
     <main>
-        <section id="banner"></section>
+        <!-- 換圖輪播 -->
+        <section id="banner">
+            <div class="content-slider">
+                <!-- 讓js切換圖片的切換器(隱藏狀態)，利用radio btn只能被選取一個的特性來做到單選而不需要額外做判斷 -->
+                <input type="radio" id="banner1" class="sec-1-input" name="banner" checked>
+                <input type="radio" id="banner2" class="sec-1-input" name="banner">
+                <input type="radio" id="banner3" class="sec-1-input" name="banner">
+                <input type="radio" id="banner4" class="sec-1-input" name="banner">
+                <input type="radio" id="banner5" class="sec-1-input" name="banner">
+                <!-- 輪播圖區 -->
+                <div class="slider">
+                    <!-- 第一張 -->
+                    <div id="top-banner-1" class="banner">
+                        <div class="banner-inner-wrapper">
+                            <h2>Creative Template</h2>
+                            <h1>Welcome<br>to MoGo</h1>
+                            <div class="line"></div>
+                            <div class="learn-more-button"><a href="#section-2">Learn More</a></div>
+                        </div>
+                    </div>
+                    <!-- 第二張 -->
+                    <div id="top-banner-2" class="banner">
+                        <div class="banner-inner-wrapper">
+                            <h2>What We Do</h2>
+                            <h1>Great<br>MoGo</h1>
+                            <div class="line"></div>
+                            <div class="learn-more-button"><a href="#section-4">Learn More</a></div>
+                        </div>
+                    </div>
+                    <!-- 第三張 -->
+                    <div id="top-banner-3" class="banner">
+                        <div class="banner-inner-wrapper">
+                            <h2>Here We Are</h2>
+                            <h1>We Are<br>MoGo</h1>
+                            <div class="line"></div>
+                            <div class="learn-more-button"><a href="#section-6">Learn More</a></div>
+                        </div>
+                    </div>
+                    <!-- 第四張 -->
+                    <div id="top-banner-4" class="banner">
+                        <div class="banner-inner-wrapper">
+                            <h2>Our Contacts</h2>
+                            <h1>Welcome<br>to MoGo</h1>
+                            <div class="line"></div>
+                            <div class="learn-more-button"><a href="#main-footer">Learn More</a></div>
+                        </div>
+                    </div>
+                    <!-- 第五張 -->
+                    <div id="top-banner-5" class="banner">
+                        <div class="banner-inner-wrapper">
+                            <h2>Our Contacts</h2>
+                            <h1>Welcome<br>to MoGo</h1>
+                            <div class="line"></div>
+                            <div class="learn-more-button"><a href="#main-footer">Learn More</a></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 輪播張數提示器 -->
+                <nav>
+                    <div class="controls">
+                        <label for="banner1">
+                            <!-- 進度條 -->
+                            <span class="progressbar">
+                                <!-- 進度條填充器 -->
+                                <span class="progressbar-fill"></span>
+                            </span>
+                            <!-- <span>01</span> Intro -->
+                        </label>
+                        <label for="banner2">
+                            <span class="progressbar">
+                                <span class="progressbar-fill"></span>
+                            </span>
+                            <!-- <span>02</span> Work -->
+                        </label>
+                        <label for="banner3">
+                            <span class="progressbar">
+                                <span class="progressbar-fill"></span>
+                            </span>
+                            <!-- <span>03</span> About -->
+                        </label>
+                        <label for="banner4">
+                            <span class="progressbar">
+                                <span class="progressbar-fill"></span>
+                            </span>
+                            <!-- <span>04</span> Contacts -->
+                        </label>
+                        <label for="banner5">
+                            <span class="progressbar">
+                                <span class="progressbar-fill"></span>
+                            </span>
+                            <!-- <span>05</span> Contacts -->
+                        </label>
+                    </div>
+                </nav>
+            </div>
+        </section>
+        <!-- 最新消息 -->
         <section id="news">
             <header class="title">
                 <h2>NEWS</h2>
@@ -166,7 +265,9 @@
                 <video src="./images/Planter.mp4" poster="./images/cover.jpg" controls></video>
             </div>
         </section>
+        <!-- 關於我們 -->
         <section id="about">
+            <!-- 內容區 -->
             <div class="content">
                 <header class="title">
                     <h2>ABOUT</h2>
@@ -254,7 +355,11 @@
                     deleniti fugit sunt maxime facilis suscipit exercitationem cum hic neque culpa illo. Libero,
                     dolorem? Eveniet sapiente debitis temporibus ut provident laborum, iste illo!</p>
             </div>
+            <!-- 背景影片 -->
+            <!-- video無法使用css設定為背景，他一定要存在於HTML中，要自動播放一定要靜音，背景影片要loop循環 -->
+            <video src="./images/flower.mp4" autoplay muted loop></video>
         </section>
+        <!-- 聯絡我們 -->
         <section id="contact">
             <header class="title">
                 <h2>CONTACT</h2>
@@ -286,6 +391,12 @@
         </section>
     </main>
     <footer></footer>
+
+    <!-- 先載入jQuery原始碼 讓瀏覽器看懂 -->
+    <!-- jQuery原始碼只能選一個版本套用，不可重複使用 -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- 換圖輪播js，因為是寫jQuery所以一定要放在jQuery原始檔下面 -->
+    <script src="./js/carousel.js"></script>
 </body>
 
 </html>
