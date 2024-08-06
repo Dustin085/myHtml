@@ -37,24 +37,33 @@
             </svg>
         </h1>
         <!-- 選單列 -->
-        <nav class="navigation">
-            <!-- icon btn | ul.icon>li*3>a -->
-            <ul class="icon">
-                <li><a class="icon-fb" href="#"></a></li>
-                <li><a class="icon-ig" href="#"></a></li>
-                <li><a class="icon-line" href="#"></a></li>
-                <li><a class="btn-s" href="./login.html">Login</a></li>
-            </ul>
-            <!-- main btn | ul.menu>li*6>a -->
-            <ul class="menu">
-                <li><a href="#">HOME</a></li>
-                <li><a href="#">NEWS</a></li>
-                <li><a href="#">SERVICE</a></li>
-                <li><a href="#">VIDEO</a></li>
-                <li><a href="#">ABOUT</a></li>
-                <li><a href="#">CONTACT</a></li>
-            </ul>
-        </nav>
+        <div class="navbar">
+            <!-- 三條槓的漢堡按鈕 -->
+            <button class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <nav class="navigation">
+                <!-- icon btn | ul.icon>li*3>a -->
+                <ul class="icon">
+                    <li><a class="icon-fb" href="#"></a></li>
+                    <li><a class="icon-ig" href="#"></a></li>
+                    <li><a class="icon-line" href="#"></a></li>
+                    <li><a class="btn-s" href="./login.html">Login</a></li>
+                </ul>
+                <!-- main btn | ul.menu>li*6>a -->
+                <ul class="menu">
+                    <li><a href="#">HOME</a></li>
+                    <li><a href="#">NEWS</a></li>
+                    <li><a href="#">SERVICE</a></li>
+                    <li><a href="#">VIDEO</a></li>
+                    <li><a href="#">ABOUT</a></li>
+                    <li><a href="#">CONTACT</a></li>
+                </ul>
+            </nav>
+        </div>
+
     </header>
     <main>
         <!-- 換圖輪播 -->
@@ -206,6 +215,7 @@
                     </a>
                 </article>
             </div>
+            <a class="btn-s" href="">more...</a>
         </section>
         <!-- 服務項目區 -->
         <section id="service">
@@ -250,6 +260,7 @@
                     </a>
                 </li>
             </ul>
+            <a class="btn-s" href="">more...</a>
         </section>
         <section id="video">
             <header class="title">
@@ -449,6 +460,8 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <!-- 換圖輪播js，因為是寫jQuery所以一定要放在jQuery原始檔下面 -->
     <script src="./js/carousel.js"></script>
+    <!-- 自訂的js，一定要寫在最下面，要最後執行 -->
+    <script src="./js/script.js"></script>
 </body>
 
 </html>

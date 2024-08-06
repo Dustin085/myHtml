@@ -182,6 +182,7 @@ button#btn__contact--submit {
     /* background-color: #c9aeae; */
 }
 
+/* logo區 */
 .logo {
     width: 65px;
 }
@@ -192,6 +193,37 @@ button#btn__contact--submit {
     /* box-shadow: ; 是在整個框外面加陰影 */
 }
 
+.navbar {
+    display: flex;
+    flex-direction: column;
+    /* 副軸(水平)置底(靠右) */
+    align-items: flex-end;
+}
+
+/* 漢堡按鈕區 */
+.hamburger {
+    /* 修改btn瀏覽器上預設樣式 */
+    background-color: transparent;
+    border: none;
+}
+
+.hamburger .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--deep);
+    margin: 5px auto;
+    /* transition: .35s; */
+}
+
+/* 手機版以上，漢堡消失 */
+@media(min-width:641px) {
+    .hamburger {
+        display: none;
+    }
+}
+
+/* 主要選單區 */
 .navigation {
     display: flex;
     /* 主軸變成垂直 */
@@ -274,6 +306,21 @@ button#btn__contact--submit {
     border-bottom: solid 2px var(--deep);
 }
 
+@media(max-width:640px) {
+    .navigation .menu {
+        flex-direction: column;
+        border-radius: 15px;
+    }
+
+    .navigation .menu li {
+        border: none;
+    }
+
+    .navigation .menu a {
+        margin: 15px;
+    }
+}
+
 /* 主要內容共用區 */
 section {
     display: flex;
@@ -312,10 +359,12 @@ section {
     /* 通常搭配相對單位，設定絕對單位 */
     max-width: 1400px;
     display: flex;
+    margin-bottom: 45px;
 }
 
 .box__list .item {
     /* 避免文案寬度不同時造成item大小不同 */
+    /* RWD交換主軸方向，flex:1變成高度，flex:1 的權重大於寬高 */
     flex: 1;
     /* 間距固定，常用，以免縮放時間距跳來跳去 */
     margin: 0 15px;
@@ -379,6 +428,20 @@ section {
     line-clamp: 5;
 }
 
+@media(max-width:820px) {
+    #news .item:last-child {
+        display: none;
+    }
+}
+
+@media(max-width:640px) {
+
+    /* n+2 => 第二個孩子以後 */
+    #news .item:nth-child(n+2) {
+        display: none;
+    }
+}
+
 /* 服務項目區 */
 #service {
     background-color: var(--secondary);
@@ -395,6 +458,7 @@ section {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+    /* RWD交換主軸方向，flex:1變成高度，flex:1 的權重大於寬高 */
     height: 60vh;
     background-position: center;
     background-size: cover;
@@ -426,6 +490,30 @@ section {
     background-image: url(../images/pt_svc4.jpg);
 }
 
+/* 平板以上尺寸 */
+@media (min-width: 821px) {
+    #service .btn-s {
+        display: none;
+    }
+}
+
+/* 平板820px以下 */
+@media (max-width: 820px) {
+    #service .box__list {
+        flex-direction: column;
+        /* 子元素flex:1高度均分時，父元素需要另外定義高度，否則父元素預設是抓內容尺寸，故而達不到延展效果 */
+        height: 60vh;
+    }
+
+    #service .item:nth-child(n+3) {
+        display: none;
+    }
+
+    #service .item:first-child {
+        margin-bottom: 30px;
+    }
+}
+
 /* 相關影片區 */
 #video {
     background-color: var(--tertiary);
@@ -438,6 +526,14 @@ section {
 
 video {
     width: 100%;
+}
+
+@media (max-width: 820px) {
+    #video {
+        /* 取消桌機版的100vh */
+        height: auto;
+        padding: 5vh 0;
+    }
 }
 
 /* 關於我們區 */
@@ -477,6 +573,16 @@ video {
     mix-blend-mode: overlay;
     /* 濾鏡增加亮度降低對比度 */
     filter: brightness(120%) contrast(80%);
+}
+
+@media (max-width:820px) {
+    #about .content {
+        width: 85%;
+    }
+
+    #about p {
+        height: 60vh;
+    }
 }
 
 /* 區塊捲軸 */
@@ -683,6 +789,23 @@ button#btn__contact--submit {
     transform: rotate(-30deg);
 }
 
+@media (max-width:820px) {
+    #form--contact {
+        width: 50%;
+    }
+}
+
+@media (max-width:640px) {
+    #form--contact {
+        width: 60%;
+    }
+
+    .flower_r,
+    .flower_w {
+        display: none;
+    }
+}
+
 /* 頁尾區 */
 footer {
     padding: 20px;
@@ -718,9 +841,10 @@ footer .navigation .menu li {
 }
 
 @media(max-width:820px) {
-    footer{
+    footer {
         text-align: center;
     }
+
     /* 網站地圖消失 */
     footer .nav-box {
         display: none;
