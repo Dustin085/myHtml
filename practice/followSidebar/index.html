@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #content {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 0 100px;
+        }
+
+        #sidebar {
+            position: relative;
+            height: 500px;
+            width: 10vw;
+            background-color: blue;
+        }
+
+        #drawer {
+            position: absolute;
+            left: 100px;
+            height: 500px;
+            width: 600px;
+            background-color: brown;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <section id="content">
+            <nav id="sidebar">
+                <div id="drawer">
+
+                </div>
+            </nav>
+
+        </section>
+    </main>
+    <script>
+        let sidebarEle = document.querySelector("#sidebar");
+        let drawerEle = document.querySelector("#drawer");
+        drawerEle.style.left = (sidebarEle.offsetWidth + "px");
+        // console.log(sidebarEle);
+        // console.log(drawerEle);
+        window.addEventListener("resize", () => {
+            // console.log(sidebarEle.offsetWidth);
+            drawerEle.style.left = (sidebarEle.offsetWidth + "px");
+        });
+    </script>
+</body>
+
+</html>
