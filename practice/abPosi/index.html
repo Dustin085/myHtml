@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .a {
+            position: relative;
+            height: 500px;
+            width: 500px;
+            background-color: aqua;
+        }
+
+        .b {
+            position: absolute;
+            /* position: relative; */
+            height: 200px;
+            width: 200px;
+            background-color: blue;
+            left: 50px;
+            top: 50px;
+            transform: rotate(45deg);
+            
+        }
+
+        .c {
+            position: absolute;
+            height: 100px;
+            width: 100px;
+            background-color: red;
+            left: 50px;
+        }
+
+        .d{
+            height: 200px;
+            width: 200px;
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="a">
+        <div class="b">
+            <div class="c"></div>
+        </div>
+        <div class="d"></div>
+    </div>
+</body>
+
+</html>
