@@ -32,6 +32,7 @@
     --alpha-b-40: rgba(0, 0, 0, 0.4);
     --alpha-r-25: rgba(201, 174, 174, 0.25);
     --alpha-r-50: rgba(201, 174, 174, 0.5);
+    --alpha-r-70: rgb(143, 109, 109, 0.7);
     /* 漸層 */
     --gradient-b-a: rgba(242, 237, 240, 0.2), rgba(236, 240, 244, 0.1);
 }
@@ -160,8 +161,24 @@ button#btn__contact--submit {
     box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.15),
         inset -1px -1px rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(5px);
+    background-color: var(--alpha-r-25);
     /* filter: drop-shadow會照著圖像輪廓給陰影 */
     /* filter: drop-shadow(2px 2px rgba(0, 0, 0, 0.5)); */
+}
+
+#go-top-btn {
+    position: fixed;
+    z-index: 999;
+    right: 20px;
+    bottom: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--alpha-r-70);
+    /* 圓形給50% */
+    border-radius: 50%;
+    padding: 5px;
+    cursor: pointer;
+    border: none;
 }
 
 /* 頁首區 */
@@ -207,14 +224,7 @@ button#btn__contact--submit {
     border: none;
 }
 
-.hamburger .bar {
-    display: block;
-    width: 25px;
-    height: 3px;
-    background-color: var(--deep);
-    margin: 5px auto;
-    /* transition: .35s; */
-}
+
 
 /* 手機版以上，漢堡消失 */
 @media(min-width:641px) {
@@ -307,9 +317,87 @@ button#btn__contact--submit {
 }
 
 @media(max-width:640px) {
-    .navigation .menu {
-        flex-direction: column;
+    #topbar {
+        align-items: flex-start;
+    }
+
+    .hamburger .bar {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: var(--deep);
+        margin: 5px auto;
+        transition: .35s;
+    }
+
+    .hamburger.is-active .bar:nth-child(1) {
+        /* transform有先後順序，應先移動到中心點再轉 */
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.is-active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.is-active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    #topbar .navigation {
+        display: none;
+        align-items: center;
+        padding: 10px;
         border-radius: 15px;
+        /* 玻璃擬態效果 */
+        background-image: linear-gradient(150deg,
+                var(--alpha-w-15), rgba(255, 255, 255, 0.5));
+        box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.15),
+            inset -1px -1px rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(5px);
+        background-color: var(--alpha-w-60);
+        /* 動畫效果 */
+        animation: hide .35s both;
+    }
+
+    @keyframes hide {
+        from {
+            /* 動態顯示 */
+            display: flex;
+            opacity: 1;
+        }
+
+        to {
+            /* 動態消失 */
+            display: none;
+            opacity: 0;
+        }
+    }
+
+
+    #topbar .navigation.show {
+        display: flex;
+        animation: show .35s both;
+    }
+
+    @keyframes show {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+
+    #topbar .menu {
+        text-align: center;
+        flex-direction: column;
+        order: -1;
+        /* 取消玻璃擬態 */
+        background-image: none;
+        box-shadow: none;
+        backdrop-filter: none;
+        background-color: transparent;
     }
 
     .navigation .menu li {
@@ -809,6 +897,7 @@ button#btn__contact--submit {
 /* 頁尾區 */
 footer {
     padding: 20px;
+    background-color: var(--lesser-2);
 }
 
 footer .nav-box {
