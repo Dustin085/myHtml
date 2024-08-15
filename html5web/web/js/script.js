@@ -23,15 +23,31 @@ $(() => {
         let targetPos = $(targetName).offset();
         // 有些瀏覽器的卷軸寫在html有些在body上，故選擇html和body
         // animate第一個參數寫css語法，第二個參數寫時間(ms)
-        $("html, body").animate({ scrollTop: targetPos.top }, 1000);
+        $("html, body").animate({
+            scrollTop: targetPos.top
+        }, 1000);
     });
 
-    // go-top-btn
+    // 回到頂點按鈕go-top-btn
     $("#go-top-btn").click(function () {
-        $("html,body").animate({ scrollTop: 0 }, 1000);
+        $("html,body").animate({
+            scrollTop: 0
+        }, 1000);
+    });
+
+    // 指定卷軸位置，讓go-top按鈕淡出淡入
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 200) {
+            // 加入stop()可以停止動畫，避免動畫不斷疊加
+            // fadeIn跟fadeOut有時會有衝突，所以用fadeTo("", 1)代替
+            $("#go-top-btn").stop().fadeTo("fast", 1);
+        } else {
+            $("#go-top-btn").stop().fadeOut("fast");
+        }
     });
 });
 
-// if($(window).width() < 821){
-//     $("#about video").remove();
-// }
+// jQuery smoove
+$(".smoove").smoove({
+    offset: "20%"
+});

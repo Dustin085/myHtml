@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 150px;
+            height: 150px;
+            line-height: 150px;
+            text-align: center;
+            font-size: 20px;
+        }
+
+        #box1 {
+            background-color: goldenrod;
+            /* 先none才能看到fadeIn */
+            display: none;
+        }
+
+        #box2 {
+            background-color: aquamarine;
+        }
+
+        #box3 {
+            background-color: beige;
+        }
+
+        #box4 {
+            background-color: violet;
+        }
+    </style>
+</head>
+
+<body>
+    <button>按我</button>
+    <!-- div#box$*4 -->
+    <div id="box1">fadeIn</div>
+    <div id="box2">fadeOut</div>
+    <div id="box3">fadeToggle</div>
+    <div id="box4">fadeTo</div>
+
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>
+        // $(document).ready(function(){
+        // });
+        $(function () {
+            $("button").click(function () {
+                $("#box1").fadeIn(2000);
+                // 執行完動畫才執行cbfn，即使已經fadeOut了也會執行cbfn(馬上執行)
+                $("#box2").fadeOut("slow",function(){
+                    console.log("I'm out!!");
+                });
+                $("#box3").fadeToggle("fast");
+                $("#box4").fadeTo("", 0.4);
+            });
+        });
+    </script>
+</body>
+
+</html>

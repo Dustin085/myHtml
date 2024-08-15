@@ -164,13 +164,13 @@
         </section>
         <!-- 最新消息 -->
         <section id="news">
-            <header class="title">
+            <header class="title smoove">
                 <h2>NEWS</h2>
                 <h3>最新消息</h3>
             </header>
             <div class="box__list">
                 <!-- a>(figure>img)+div.content>h1+p -->
-                <article class="item">
+                <article class="item smoove" data-move-x="-120%" data-rotate="90deg" id="test">
                     <a href="#">
                         <!-- 圖片 -->
                         <figure><img src="./images/pt_news1.jpg" alt=""></figure>
@@ -185,7 +185,7 @@
                         </div>
                     </a>
                 </article>
-                <article class="item">
+                <article class="item smoove" data-move-x="-60%" data-move-y="200px" data-rotate="45deg">
                     <a href="#">
                         <figure><img src="./images/pt_news2.jpg" alt=""></figure>
                         <div class="content">
@@ -199,7 +199,7 @@
                         </div>
                     </a>
                 </article>
-                <article class="item">
+                <article class="item smoove" data-move-x="120%" data-rotate="-90deg">
                     <a href="#">
                         <figure><img src="./images/pt_news3.jpg" alt=""></figure>
                         <div class="content">
@@ -227,7 +227,7 @@
             <!-- 列表區 -->
             <!-- ul.box__list>li.item*4>a[href="#"]>h1{SERVICE TITLE}+p -->
             <ul class="box__list">
-                <li class="item svc-1">
+                <li class="item svc-1 smoove" data-move-x="-200px" data-move-y="200px">
                     <a href="#" class="content">
                         <h1>SERVICE TITLE</h1>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla similique pariatur aperiam
@@ -235,7 +235,7 @@
                             perferendis dolorum molestiae deserunt? Architecto, sint.</p>
                     </a>
                 </li>
-                <li class="item svc-2">
+                <li class="item svc-2 smoove" data-move-x="-100px" data-move-y="200px">
                     <a href="#" class="content">
                         <h1>SERVICE TITLE</h1>
                         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corrupti quidem ipsum, ab sit
@@ -243,7 +243,7 @@
                             amet minima ullam facilis beatae!</p>
                     </a>
                 </li>
-                <li class="item svc-3">
+                <li class="item svc-3 smoove" data-move-x="100px" data-move-y="200px">
                     <a href="#" class="content">
                         <h1>SERVICE TITLE</h1>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, corrupti accusantium. Iusto
@@ -251,7 +251,7 @@
                             nihil quod at eligendi ab corporis minima aspernatur!</p>
                     </a>
                 </li>
-                <li class="item svc-4">
+                <li class="item svc-4 smoove" data-move-x="200px" data-move-y="200px">
                     <a href="#" class="content">
                         <h1>SERVICE TITLE</h1>
                         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore illo animi pariatur
@@ -268,7 +268,7 @@
                 <h3>相關影片</h3>
             </header>
             <!-- 影片容器 -->
-            <div class="video">
+            <div class="video smoove" data-move-x="-120%" data-rotate-y="-90deg">
                 <!-- 影片本人，影片封面可另外做圖以符合網站色調或風格 -->
                 <!-- 影片要用autoplay，一定要加muted(此為瀏覽器的規定) -->
                 <!-- playsinline可以讓iphone播放影片時不使用燈箱效果，如果要讓iphone自動播放的話，必須寫playsinline -->
@@ -279,7 +279,7 @@
         <!-- 關於我們 -->
         <section id="about">
             <!-- 內容區 -->
-            <div class="content">
+            <div class="content smoove" data-move-z="-500px" data-rotate-x="90deg" data-move-y="200px">
                 <header class="title">
                     <h2>ABOUT</h2>
                     <h3>關於我們</h3>
@@ -376,7 +376,8 @@
                 <h2>CONTACT</h2>
                 <h3>聯絡我們</h3>
             </header>
-            <form action="" method="post" name="form--contact" id="form--contact" title="聯絡我們表單">
+            <form class="smoove" action="" method="post" name="form--contact" id="form--contact" title="聯絡我們表單"
+                data-move-x="120%" data-rotate-y="90deg">
                 <label for="username">*姓名：</label>
                 <input type="text" name="username" id="username" title="姓名欄位" placeholder="請輸入姓名" required autocomplete>
 
@@ -459,8 +460,13 @@
     <!-- 先載入jQuery原始碼 讓瀏覽器看懂 -->
     <!-- jQuery原始碼只能選一個版本套用，不可重複使用 -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
     <!-- 換圖輪播js，因為是寫jQuery所以一定要放在jQuery原始檔下面 -->
     <script src="./js/carousel.js"></script>
+
+    <!-- jQuery Smoove CDN，要記得補上https: -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-smoove/0.2.10/jquery.smoove.min.js"></script>
+
     <!-- 自訂的js，一定要寫在最下面，要最後執行 -->
     <script src="./js/script.js"></script>
 </body>

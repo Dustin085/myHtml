@@ -167,6 +167,8 @@ button#btn__contact--submit {
 }
 
 #go-top-btn {
+    /* 一開始消失，用jq做fadeIn, fadeOut */
+    display: none;
     position: fixed;
     z-index: 999;
     right: 20px;
