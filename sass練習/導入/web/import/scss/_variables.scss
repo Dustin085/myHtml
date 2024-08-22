@@ -1,0 +1,39 @@
+// 變數區
+// 間距，map寫法, map-get( , );
+$interval: (
+    s: 5px,
+    m: 10px,
+    l: 15px
+);
+
+// 前綴詞設定 #{}
+$top-prefix: "topbar";
+$icon-prefix: "icon";
+$container: "box";
+
+// 顏色規範
+$color: (
+    // 主色
+    primary: #f2edf0,
+    secondary: #e6ece5,
+    tertiary: #ecf0f4,
+    // 輔助
+    lesser-1: #f3e4e4,
+    lesser-2: #efdbdb,
+);
+// 漸層
+// 數列不可列入map，需要獨立一個變數
+$gradient-b-a: rgba(242, 237, 240, 0.2), rgba(236, 240, 244, 0.1);
+
+// 字級規範
+$font-size: (
+    s: .85px,
+    m: 1rem,
+    l: 1.5rem,
+    xl: 2rem
+);
+
+// 字體規範
+$font-family-title: Letter, sans-serif;
+$font-family-tc: "蘋方-繁", "PingFang TC", "黑體-繁", "Heiti TC", "微軟正黑體", "Microsoft JhengHei", "Noto Sans TC", sans-serif;
+$font-family-en: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica, Arial;

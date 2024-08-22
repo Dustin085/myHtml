@@ -1,0 +1,124 @@
+// 變數區
+$font-size-s: .85rem;
+$font-size-m: 1rem;
+$font-size-l: 1.5rem;
+// !default預設值的權重最低
+$font-size-xl: 2rem !default;
+$font-size-xl: 1.8rem;
+
+$font-size: (
+    s: .85px,
+    m: 1rem,
+    l: 1.5rem
+);
+
+// $interval-s: 5px;
+// $interval-m: 10px;
+// $interval-l: 15px;
+
+// 間距，map寫法, map-get( , );
+$interval: (
+    s: 5px,
+    m: 10px,
+    l: 15px
+);
+
+// 前綴詞設定 #{}
+$top-prefix: "topbar";
+$icon-prefix: "icon";
+$container: "box";
+
+.#{$top-prefix}-title {
+    color: aqua;
+}
+
+$color: red;
+
+.navigation {
+    margin: map-get($interval , l);
+    display: flex;
+    color: $color;
+    flex-direction: column;
+    align-items: flex-end;
+
+    .menu {
+        padding: map-get($interval , m);
+        display: flex;
+        // 重設變數
+        $color: blue; // 一般作用域
+        // $color: blue !global; 全球作用域 
+        color: $color;
+        margin: 15px 0;
+        padding: 10px;
+        border-radius: 99px;
+
+        li {
+            border-right: solid 1px var(--deep);
+            color: $color;
+
+            &:last-child {
+                border-right: none;
+            }
+
+            a {
+                color: $color;
+                font-size: .9rem;
+                line-height: 1;
+                margin: 0 15px;
+                border-bottom: solid 2px transparent;
+                transition: .35s ease-in-out;
+            }
+        }
+    }
+
+    .icon {
+        .#{$icon-prefix}-fb {
+            background-image: url(../images/icon-fb.svg);
+
+            &:hover {
+                background-image: url(../images/icon-fb-hover.svg);
+            }
+        }
+
+        .#{$icon-prefix}-ig {
+            background-image: url(../images/icon-ig.svg);
+
+            &:hover {
+                background-image: url(../images/icon-ig-hover.svg);
+            }
+        }
+    }
+}
+
+#contact {
+    /* 專門做為absolute的定位依據 */
+    position: relative;
+    overflow: clip;
+    color: $color;
+
+    background: {
+        image: url(../images/bg_contact.jpg);
+        size: cover;
+        position: center;
+        repeat: no-repeat;
+        attachment: fixed;
+    }
+
+    font: {
+        family: sans-serif;
+        size: $font-size-xl;
+        weight: 700;
+    }
+
+    .icon-#{$container} {
+        width: 55px;
+    }
+
+    // /* 背景影像基本設定 */
+    // background-image: url(../images/bg_contact.jpg);
+    // background-size: cover;
+    // background-position: center center;
+    // background-repeat: no-repeat;
+    // /* 固定背景 */
+    // background-attachment: fixed;
+}

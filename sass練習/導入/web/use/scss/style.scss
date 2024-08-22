@@ -1,0 +1,12 @@
+@use "./reset";
+@use "./variables" as *;
+// use可以整份檔案內容全部匯入，也可以調用，調用時使用as (ex: as v.);
+// as *，表示直接調用，可以不用寫v.
+
+.myClass {
+    color: map-get($color, primary);
+
+    background: {
+        color: $gradient-b-a;
+    }
+}

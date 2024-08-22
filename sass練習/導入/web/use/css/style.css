@@ -1,0 +1,53 @@
+@charset "UTF-8";
+/* 重置所有標籤的樣式 */
+* {
+  margin: 0;
+  padding: 0;
+  /* 不累加內距padding與邊框border */
+  box-sizing: border-box;
+}
+
+/* 重置字體 */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica, Arial, "蘋方-繁", "PingFang TC", "黑體-繁", "Heiti TC", "微軟正黑體", "Microsoft JhengHei", "Noto Sans TC", sans-serif;
+  font-size: 100%;
+  line-height: 1.5;
+  /* background-color: rgb(175, 207, 191); */
+}
+
+/* 重置標題 */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+
+/* 重置列表 */
+ul,
+ol {
+  list-style: none;
+}
+
+/* 重置圖片 */
+img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+/* 重置連接 */
+a {
+  /* 將預設inline改成block */
+  display: block;
+  text-decoration: none;
+  color: var(--deep);
+}
+
+.myClass {
+  color: #f2edf0;
+  background-color: rgba(242, 237, 240, 0.2), rgba(236, 240, 244, 0.1);
+}/*# sourceMappingURL=style.css.map */

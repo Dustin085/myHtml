@@ -1,0 +1,11 @@
+@import "./variables";
+@import "./reset";
+// 整份檔案內容全部匯入
+
+.myClass {
+    color: map-get($color, primary);
+
+    background: {
+        image: $gradient-b-a;
+    }
+}

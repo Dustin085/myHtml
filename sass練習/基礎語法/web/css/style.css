@@ -1,0 +1,65 @@
+@charset "UTF-8";
+.topbar-title {
+  color: aqua;
+}
+
+.navigation {
+  margin: 15px;
+  display: flex;
+  color: red;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.navigation .menu {
+  padding: 10px;
+  display: flex;
+  color: blue;
+  margin: 15px 0;
+  padding: 10px;
+  border-radius: 99px;
+}
+.navigation .menu li {
+  border-right: solid 1px var(--deep);
+  color: blue;
+}
+.navigation .menu li:last-child {
+  border-right: none;
+}
+.navigation .menu li a {
+  color: blue;
+  font-size: 0.9rem;
+  line-height: 1;
+  margin: 0 15px;
+  border-bottom: solid 2px transparent;
+  transition: 0.35s ease-in-out;
+}
+.navigation .icon .icon-fb {
+  background-image: url(../images/icon-fb.svg);
+}
+.navigation .icon .icon-fb:hover {
+  background-image: url(../images/icon-fb-hover.svg);
+}
+.navigation .icon .icon-ig {
+  background-image: url(../images/icon-ig.svg);
+}
+.navigation .icon .icon-ig:hover {
+  background-image: url(../images/icon-ig-hover.svg);
+}
+
+#contact {
+  /* 專門做為absolute的定位依據 */
+  position: relative;
+  overflow: clip;
+  color: red;
+  background-image: url(../images/bg_contact.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+#contact .icon-box {
+  width: 55px;
+}/*# sourceMappingURL=style.css.map */

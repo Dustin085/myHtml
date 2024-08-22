@@ -1,0 +1,952 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Grey+Qo&family=Noto+Sans+TC:wght@100..900&display=swap');
+
+/* @import一定要在第二行 */
+/* 設定編碼，UTF-8一定要在行數1 */
+@font-face {
+    font-family: Letter;
+    src: url(../webfonts/Letter-Regular.otf);
+}
+
+/* 變數區 */
+:root {
+    /* 灰階 */
+    --deep: #444;
+    --gray: #999;
+    --light: #eee8e8;
+    /* 背景 */
+    --primary: #f2edf0;
+    --secondary: #e6ece5;
+    --tertiary: #ecf0f4;
+    /* 輔助 */
+    --lesser-1: #f3e4e4;
+    --lesser-2: #efdbdb;
+    --lesser-3: #cdaaab;
+    --lesser-4: #a97f81;
+    --lesser-5: #8f6d6d;
+    /* 透明色 */
+    --alpha-w-60: rgba(255, 255, 255, 0.6);
+    --alpha-w-50: rgba(255, 255, 255, 0.5);
+    --alpha-w-15: rgba(255, 255, 255, 0.15);
+    --alpha-b-60: rgba(0, 0, 0, 0.6);
+    --alpha-b-40: rgba(0, 0, 0, 0.4);
+    --alpha-r-25: rgba(201, 174, 174, 0.25);
+    --alpha-r-50: rgba(201, 174, 174, 0.5);
+    --alpha-r-70: rgb(143, 109, 109, 0.7);
+    /* 漸層 */
+    --gradient-b-a: rgba(242, 237, 240, 0.2), rgba(236, 240, 244, 0.1);
+}
+
+/* 捲軸樣式 */
+::-webkit-scrollbar {
+    /* 捲軸基底 */
+    width: 20px;
+    /* 高度用來調整水平捲軸 */
+    height: 20px;
+    background-color: var(--lesser-1);
+}
+
+::-webkit-scrollbar-button {
+    /* 捲軸按鈕(目前使用色塊) */
+    width: 10px;
+    height: 10px;
+    background-color: var(--lesser-4);
+}
+
+::-webkit-scrollbar-thumb {
+    /* 捲軸手柄 */
+    background-color: var(--lesser-3);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    /* 捲軸手柄 */
+    background-color: var(--lesser-5);
+}
+
+::-webkit-scrollbar-track {
+    /* 捲軸軌道 */
+    box-shadow: inset 0 0 6px var(--alpha-b-40);
+}
+
+::-webkit-scrollbar-corner {
+    /* 捲軸交界底角 */
+    background-color: var(--lesser-2);
+}
+
+::-webkit-resizer {
+    /* 多行文字欄位右下角的縮放按鈕 */
+    background-color: var(--lesser-4);
+}
+
+/* 重置所有標籤的樣式 */
+* {
+    margin: 0;
+    padding: 0;
+    /* 不累加內距padding與邊框border */
+    box-sizing: border-box;
+}
+
+/* 重置字體 */
+body {
+    font-family:
+        /*西文*/
+        -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica, Arial,
+        /*中文*/
+        "蘋方-繁", "PingFang TC", "黑體-繁", "Heiti TC", "微軟正黑體", "Microsoft JhengHei", "Noto Sans TC", sans-serif;
+    font-size: 100%;
+    line-height: 1.5;
+    /* background-color: rgb(175, 207, 191); */
+}
+
+/* 重置標題 */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
+}
+
+/* 重置列表 */
+ul,
+ol {
+    list-style: none;
+}
+
+/* 重置圖片 */
+img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+/* 重置連接 */
+a {
+    /* 將預設inline改成block */
+    display: block;
+    text-decoration: none;
+    color: var(--deep);
+}
+
+/* 共用區 */
+.btn-s {
+    background-color: var(--light);
+    color: var(--deep);
+    /* !important權重最重，應少用 */
+    width: auto !important;
+    height: 35px;
+    /* line-height是文字的頂端到下一行的文字頂端 */
+    line-height: 30px;
+    padding: 0 20px;
+    border-radius: 99px;
+    transition: .35s ease-in-out;
+}
+
+.btn-s:hover {
+    background-color: var(--deep);
+    color: var(--light);
+}
+
+#form--contact input,
+#form--contact textarea,
+#topbar .menu,
+button#btn__contact--submit {
+    /* 玻璃擬態效果 */
+    /* linear-gradient(white 60%, black 60%)會變成無漸層的分割色塊 */
+    background-image: linear-gradient(150deg,
+            var(--alpha-w-15), rgba(255, 255, 255, 0.5));
+    /* 內陰影(inset)仿造漸層邊框 */
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.15),
+        inset -1px -1px rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(5px);
+    background-color: var(--alpha-r-25);
+    /* filter: drop-shadow會照著圖像輪廓給陰影 */
+    /* filter: drop-shadow(2px 2px rgba(0, 0, 0, 0.5)); */
+}
+
+#go-top-btn {
+    /* 一開始消失，用jq做fadeIn, fadeOut */
+    display: none;
+    position: fixed;
+    z-index: 999;
+    right: 20px;
+    bottom: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--alpha-r-70);
+    /* 圓形給50% */
+    border-radius: 50%;
+    padding: 5px;
+    cursor: pointer;
+    border: none;
+}
+
+/* 頁首區 */
+#topbar {
+    /* 固定定位，不會跟著卷軸走 */
+    position: fixed;
+    /* 999最高，若無設定則後寫者蓋住先寫者 */
+    z-index: 999;
+    /* 固定定位會導致抓內容尺寸，故要設定width: 100%; */
+    width: 100%;
+    /* 預設主軸為水平 */
+    display: flex;
+    /* 主軸(水平)均分，貼齊頭尾 */
+    justify-content: space-between;
+    /* 副軸(垂直)置中 */
+    align-items: center;
+    padding: 30px;
+    /* background-color: #c9aeae; */
+}
+
+/* logo區 */
+.logo {
+    width: 65px;
+}
+
+.logo svg {
+    /* filter: d-s會照著圖片的輪廓做陰影 */
+    filter: drop-shadow(2px 2px var(--light));
+    /* box-shadow: ; 是在整個框外面加陰影 */
+}
+
+.navbar {
+    display: flex;
+    flex-direction: column;
+    /* 副軸(水平)置底(靠右) */
+    align-items: flex-end;
+}
+
+/* 漢堡按鈕區 */
+.hamburger {
+    /* 修改btn瀏覽器上預設樣式 */
+    background-color: transparent;
+    border: none;
+}
+
+
+
+/* 手機版以上，漢堡消失 */
+@media(min-width:641px) {
+    .hamburger {
+        display: none;
+    }
+}
+
+/* 主要選單區 */
+.navigation {
+    display: flex;
+    /* 主軸變成垂直 */
+    flex-direction: column;
+    /* 副軸(水平)置底 */
+    align-items: flex-end;
+}
+
+.navigation .icon {
+    display: flex;
+}
+
+.navigation .icon a {
+    width: 35px;
+    height: 35px;
+    /* 向左推間距 */
+    margin-left: 10px;
+    /* transition預設all(所有適用的屬性)，最常用的秒數是0.35s */
+    transition: .35s ease-in-out;
+}
+
+.icon-fb {
+    /* 只有svg圖會自動等比例縮放，其他圖檔會是原始尺寸 */
+    background-image: url(../images/icon-fb.svg);
+    /* 使用background-image來做:hover圖樣轉換，比使用js撰寫的效能更好 */
+    /* background-size: 100%; 若是svg以外的圖檔則需要自行設定尺寸 */
+    /* 背景顯示在content + padding */
+}
+
+.icon-fb:hover {
+    background-image: url(../images/icon-fb-hover.svg);
+}
+
+.icon-ig {
+    background-image: url(../images/icon-ig.svg);
+}
+
+.icon-ig:hover {
+    background-image: url(../images/icon-ig-hover.svg);
+}
+
+.icon-line {
+    background-image: url(../images/icon-line.svg);
+}
+
+.icon-line:hover {
+    background-image: url(../images/icon-line-hover.svg);
+}
+
+.navigation .menu {
+    display: flex;
+    /* 控制父層外距 */
+    margin: 15px 0;
+    padding: 10px;
+    border-radius: 99px;
+}
+
+.navigation .menu li {
+    border-right: solid 1px var(--deep);
+}
+
+.navigation .menu li:last-child {
+    border-right: none;
+}
+
+.navigation .menu a {
+    /* color: #444; */
+    /* 將字級稍微調小 */
+    font-size: .9rem;
+    /* reset時設定了1.5倍line-height(行高)，現在重設為1 */
+    line-height: 1;
+    /* 控制子層外距 */
+    margin: 0 15px;
+    /* 預留2px給:hover的transition效果，透明的2px border */
+    border-bottom: solid 2px transparent;
+    transition: .35s ease-in-out;
+}
+
+.navigation .menu a:hover {
+    border-bottom: solid 2px var(--deep);
+}
+
+@media(max-width:640px) {
+    #topbar {
+        align-items: flex-start;
+    }
+
+    .hamburger .bar {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: var(--deep);
+        margin: 5px auto;
+        transition: .35s;
+    }
+
+    .hamburger.is-active .bar:nth-child(1) {
+        /* transform有先後順序，應先移動到中心點再轉 */
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.is-active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.is-active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    #topbar .navigation {
+        display: none;
+        align-items: center;
+        padding: 10px;
+        border-radius: 15px;
+        /* 玻璃擬態效果 */
+        background-image: linear-gradient(150deg,
+                var(--alpha-w-15), rgba(255, 255, 255, 0.5));
+        box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.15),
+            inset -1px -1px rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(5px);
+        background-color: var(--alpha-w-60);
+        /* 動畫效果 */
+        animation: hide .35s both;
+    }
+
+    @keyframes hide {
+        from {
+            /* 動態顯示 */
+            display: flex;
+            opacity: 1;
+        }
+
+        to {
+            /* 動態消失 */
+            display: none;
+            opacity: 0;
+        }
+    }
+
+
+    #topbar .navigation.show {
+        display: flex;
+        animation: show .35s both;
+    }
+
+    @keyframes show {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+
+    #topbar .menu {
+        text-align: center;
+        flex-direction: column;
+        order: -1;
+        /* 取消玻璃擬態 */
+        background-image: none;
+        box-shadow: none;
+        backdrop-filter: none;
+        background-color: transparent;
+    }
+
+    .navigation .menu li {
+        border: none;
+    }
+
+    .navigation .menu a {
+        margin: 15px;
+    }
+}
+
+/* 主要內容共用區 */
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.title h2 {
+    font-family: Letter, sans-serif;
+    font-weight: bold;
+    font-size: 2rem;
+    letter-spacing: .3rem;
+    border-bottom: solid 2px var(--deep);
+}
+
+.title h3 {
+    font-family: "Noto Sans TC", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-size: 1.2rem;
+    letter-spacing: .2rem;
+    line-height: 2.5rem;
+}
+
+.box__list {
+    width: 80%;
+    /* 通常搭配相對單位，設定絕對單位 */
+    max-width: 1400px;
+    display: flex;
+    margin-bottom: 45px;
+}
+
+.box__list .item {
+    /* 避免文案寬度不同時造成item大小不同 */
+    /* RWD交換主軸方向，flex:1變成高度，flex:1 的權重大於寬高 */
+    flex: 1;
+    /* 間距固定，常用，以免縮放時間距跳來跳去 */
+    margin: 0 15px;
+    /* 陰影顏色盡量有透明度 */
+    box-shadow: 3px 3px 15px var(--alpha-b-60);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.box__list figure {
+    height: 35vh;
+}
+
+.box__list img {
+    object-fit: cover;
+    /* width: 100%; 共用區有設定 */
+    height: 100%;
+}
+
+.box__list .content {
+    padding: 15px 20px;
+}
+
+.box__list h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.box__list p {
+    font-size: .9rem;
+    /* 齊行: 通常只有中文使用，英文使用時會變成單字間距均分 */
+    text-align: justify;
+}
+
+/* 最新消息區 */
+#news {
+    background-color: var(--primary);
+}
+
+#news .content {
+    background-color: var(--alpha-w-60);
+    transition: .4s;
+}
+
+#news .content:hover {
+    background-color: var(--light);
+}
+
+#news p {
+    /* width: 100%; 若父元素為flex row，則寬度會延展，需要w100%限制寬度 */
+    /* 多行省略 */
+    overflow: hidden;
+    /* 文字溢出出現省略號，若有設定line-clamp時，瀏覽器會自動加 */
+    text-overflow: ellipsis;
+    /* 彈性布局 */
+    display: -webkit-box;
+    /* 定義box垂直布局 */
+    -webkit-box-orient: vertical;
+    /* 限制行數 */
+    -webkit-line-clamp: 5;
+    line-clamp: 5;
+}
+
+@media(max-width:820px) {
+    #news .item:last-child {
+        display: none;
+    }
+}
+
+@media(max-width:640px) {
+
+    /* n+2 => 第二個孩子以後 */
+    #news .item:nth-child(n+2) {
+        display: none;
+    }
+}
+
+/* 服務項目區 */
+#service {
+    background-color: var(--secondary);
+}
+
+#service p {
+    /* 單行省略，寬度必須被設定才能使用 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+#service .item {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    /* RWD交換主軸方向，flex:1變成高度，flex:1 的權重大於寬高 */
+    height: 60vh;
+    background-position: center;
+    background-size: cover;
+}
+
+#service .content {
+    color: var(--light);
+    background-color: var(--alpha-b-40);
+    transition: .4s;
+}
+
+#service .content:hover {
+    background-color: var(--alpha-b-60);
+}
+
+.svc-1 {
+    background-image: url(../images/pt_svc1.jpg);
+}
+
+.svc-2 {
+    background-image: url(../images/pt_svc2.jpg);
+}
+
+.svc-3 {
+    background-image: url(../images/pt_svc3.jpg);
+}
+
+.svc-4 {
+    background-image: url(../images/pt_svc4.jpg);
+}
+
+/* 平板以上尺寸 */
+@media (min-width: 821px) {
+    #service .btn-s {
+        display: none;
+    }
+}
+
+/* 平板820px以下 */
+@media (max-width: 820px) {
+    #service .box__list {
+        flex-direction: column;
+        /* 子元素flex:1高度均分時，父元素需要另外定義高度，否則父元素預設是抓內容尺寸，故而達不到延展效果 */
+        height: 60vh;
+    }
+
+    #service .item:nth-child(n+3) {
+        display: none;
+    }
+
+    #service .item:first-child {
+        margin-bottom: 30px;
+    }
+}
+
+/* 相關影片區 */
+#video {
+    background-color: var(--tertiary);
+}
+
+.video {
+    width: 80%;
+    max-width: 1050px;
+}
+
+video {
+    width: 100%;
+}
+
+@media (max-width: 820px) {
+    #video {
+        /* 取消桌機版的100vh */
+        height: auto;
+        padding: 5vh 0;
+    }
+}
+
+/* 關於我們區 */
+#about {
+    position: relative;
+    background-color: var(--lesser-2);
+}
+
+#about .content {
+    position: absolute;
+    z-index: 1;
+    width: 65%;
+    /* 高度%是抓父元素的相對高度(section#about => 100vh) */
+    height: 100%;
+    background-color: var(--alpha-r-50);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* 將背景影片模糊，必須與fiter: blur()分清楚 */
+    backdrop-filter: blur(5px);
+}
+
+#about p {
+    width: 85%;
+    height: 65vh;
+    padding-right: 1rem;
+    /* 推薦使用auto */
+    overflow: auto;
+}
+
+#about video {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    /* 混合模式，與相片調色模式相同，可參考其 */
+    mix-blend-mode: overlay;
+    /* 濾鏡增加亮度降低對比度 */
+    filter: brightness(120%) contrast(80%);
+}
+
+@media (max-width:820px) {
+    #about .content {
+        width: 85%;
+    }
+
+    #about p {
+        height: 60vh;
+    }
+}
+
+/* 區塊捲軸 */
+#about p::-webkit-scrollbar {
+    background-color: transparent;
+}
+
+#about p::-webkit-scrollbar-thumb {
+    border-radius: 99px;
+    border: solid 1px var(--lesser-5);
+}
+
+#about p::-webkit-scrollbar-track {
+    border-radius: 99px;
+    border: solid 1px var(--lesser-5);
+}
+
+#about p::-webkit-scrollbar-button {
+    /* 若共用區有寫捲軸按鈕才要寫(讓btn消失) */
+    display: none;
+}
+
+
+
+/* 聯絡我們區 */
+#contact {
+    /* 專門做為absolute的定位依據 */
+    position: relative;
+    overflow: clip;
+    /* 背景影像基本設定 */
+    background-image: url(../images/bg_contact.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    /* 固定背景 */
+    background-attachment: fixed;
+}
+
+#form--contact {
+    font-family: "Noto Sans TC", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 35%;
+}
+
+#form--contact label {
+    width: 100%;
+    font-size: .85rem;
+    line-height: 2;
+    margin-top: 1rem;
+}
+
+#form--contact input,
+#form--contact textarea {
+    width: 100%;
+    padding: 6px;
+    color: var(--lesser-5);
+    font-weight: 600;
+    border-radius: 10px;
+    /* 取消表單元素的預設值 */
+    background-color: transparent;
+    border: none;
+}
+
+#form--contact input:focus,
+#form--contact textarea:focus {
+    /* 取消focus的內框線與外框線 */
+    outline: 1px solid var(--lesser-4);
+}
+
+#form--contact input::placeholder,
+#form--contact textarea::placeholder {
+    font-size: .75rem;
+    font-weight: 400;
+    color: var(--lesser-3)
+}
+
+#form--contact small {
+    font-size: .75rem;
+    color: var(--lesser-5);
+    padding: 15px 5px;
+}
+
+/* 動態按鈕 */
+button#btn__contact--submit {
+    /* position: relative; */
+    /* outline: none; */
+    /* text-decoration: none; 取消文字裝飾底線 */
+    border-radius: 50px;
+    /* 定義起始位置 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    /* text-transform: uppercase; 設定字母大寫 */
+    height: 60px;
+    width: 210px;
+    /* opacity: 1; 透明度 */
+    /* bg-color有預設值 */
+    background-color: var(--alpha-r-25);
+    /* border有預設值 */
+    border: 1px solid var(--alpha-r-50);
+}
+
+#btn__contact--submit span {
+    color: var(--lesser-5);
+    font-size: .85rem;
+    font-weight: 500;
+    /* 每個字右邊加字距 */
+    letter-spacing: 1rem;
+    /* 補回最右邊字多出來的字距 */
+    padding-left: 1rem;
+}
+
+#btn__contact--submit:hover {
+    animation: rotate 0.7s ease-in-out both;
+}
+
+#btn__contact--submit:hover span {
+    animation: storm 0.7s ease-in-out both;
+    animation-delay: 0.06s;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg)
+            /* translate3d(0, 0, 0) */
+        ;
+    }
+
+    25% {
+        transform: rotate(3deg)
+            /* translate3d(0, 0, 0) */
+        ;
+    }
+
+    50% {
+        transform: rotate(-3deg)
+            /* translate3d(0, 0, 0) */
+        ;
+    }
+
+    75% {
+        transform: rotate(1deg)
+            /* translate3d(0, 0, 0) */
+        ;
+    }
+
+    100% {
+        transform: rotate(0deg)
+            /* translate3d(0, 0, 0) */
+        ;
+    }
+}
+
+@keyframes storm {
+    0% {
+        transform: translate3d(0, 0, 0)
+            /* translateZ(0) */
+        ;
+    }
+
+    25% {
+        transform: translate3d(4px, 0, 0)
+            /* translateZ(0) */
+        ;
+    }
+
+    50% {
+        transform: translate3d(-3px, 0, 0)
+            /* translateZ(0) */
+        ;
+    }
+
+    75% {
+        transform: translate3d(2px, 0, 0)
+            /* translateZ(0) */
+        ;
+    }
+
+    100% {
+        transform: translate3d(0, 0, 0)
+            /* translateZ(0) */
+        ;
+    }
+}
+
+/* 裝飾花 */
+.flower_r {
+    /* 絕對定位 */
+    position: absolute;
+    left: -19px;
+    bottom: -10px;
+    width: 300px;
+    transform: rotate(30deg);
+}
+
+.flower_w {
+    position: absolute;
+    right: -34px;
+    top: 179px;
+    width: 300px;
+    transform: rotate(-30deg);
+}
+
+@media (max-width:820px) {
+    #form--contact {
+        width: 50%;
+    }
+}
+
+@media (max-width:640px) {
+    #form--contact {
+        width: 60%;
+    }
+
+    .flower_r,
+    .flower_w {
+        display: none;
+    }
+}
+
+/* 頁尾區 */
+footer {
+    padding: 20px;
+    background-color: var(--lesser-2);
+}
+
+footer .nav-box {
+    display: flex;
+    justify-content: space-between;
+}
+
+footer .navigation .menu {
+    margin: 0;
+    padding: 0;
+}
+
+footer .navigation .menu a {
+    font-weight: 600;
+}
+
+/* 取消子選單的邊框 */
+/* footer .navigation .menu li{
+    border: none;
+    margin: 5px 0;
+} */
+
+/* 取消頁尾區全部的邊框 */
+footer .navigation .menu li {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border: none;
+    margin: 5px 0;
+}
+
+@media(max-width:820px) {
+    footer {
+        text-align: center;
+    }
+
+    /* 網站地圖消失 */
+    footer .nav-box {
+        display: none;
+    }
+}
+
+/* 桌機版可能會是特定斷點，最好桌機版能共用 */
+/* 桌機版檢查到最小1024 */
+
+/* 中型設備(ipad air) */
+@media(max-width:820px) {}
+
+/* 小型設備(全部的手機) */
+@media(max-width:640px) {}
