@@ -142,4 +142,25 @@ button#btn__contact--submit {
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
   line-clamp: 3;
+}
+
+.icon-fb {
+  background-image: url(../images/icon-fb.svg);
+}
+.icon-fb:hover {
+  background-image: url(../images/icon-fb-hover.svg);
+}
+
+.icon-ig {
+  background-image: url(../images/icon-ig.svg);
+}
+.icon-ig:hover {
+  background-image: url(../images/icon-ig-hover.svg);
+}
+
+.icon-line {
+  background-image: url(../images/icon-line.svg);
+}
+.icon-line:hover {
+  background-image: url(../images/icon-line-hover.svg);
 }/*# sourceMappingURL=style.css.map */

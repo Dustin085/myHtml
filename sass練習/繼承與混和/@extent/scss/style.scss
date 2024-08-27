@@ -84,3 +84,31 @@ button#btn__contact--submit {
 .my-para2 {
     @include multiple-line-ellipsis(3);
 }
+
+// each寫法1
+// @each $socialMedia in fb ig line {
+//     .icon-#{$socialMedia} {
+//         background-image: url(../images/icon-#{$socialMedia}.svg);
+
+//         &:hover {
+//             background-image: url(../images/icon-#{$socialMedia}-hover.svg);
+//         }
+//     }
+// }
+
+// each寫法2
+$socialMediaArr: (
+    fb,
+    ig,
+    line
+);
+
+@each $socialMedia in $socialMediaArr {
+    .icon-#{$socialMedia} {
+        background-image: url(../images/icon-#{$socialMedia}.svg);
+
+        &:hover {
+            background-image: url(../images/icon-#{$socialMedia}-hover.svg);
+        }
+    }
+}
