@@ -1,0 +1,25 @@
+// 顏色規範
+$color: (
+    // 主色
+    primary: #f2edf0,
+    secondary: #e6ece5,
+    tertiary: #ecf0f4,
+    // 輔助
+    lesser-1: #f3e4e4,
+    lesser-2: #efdbdb,
+    lesser-3: #cdaaab,
+    lesser-4: #a97f81,
+    lesser-5: #8f6d6d,
+    /* 透明色 */
+    alpha-w-60: rgba(255, 255, 255, 0.6),
+    alpha-w-50: rgba(255, 255, 255, 0.5),
+    alpha-w-15: rgba(255, 255, 255, 0.15),
+    alpha-b-60: rgba(0, 0, 0, 0.6),
+    alpha-b-40: rgba(0, 0, 0, 0.4),
+    alpha-r-25: rgba(201, 174, 174, 0.25),
+    alpha-r-50: rgba(201, 174, 174, 0.5),
+    alpha-r-70: rgb(143, 109, 109, 0.7),
+);
+// 漸層
+// 數列不可列入map，需要獨立一個變數
+$gradient-b-a: rgba(242, 237, 240, 0.2), rgba(236, 240, 244, 0.1);

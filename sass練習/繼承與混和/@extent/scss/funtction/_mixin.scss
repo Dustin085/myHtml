@@ -1,0 +1,34 @@
+@use "../variables" as *;
+
+// mixin會寫在當下的區塊內，而非集中在語法上方
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex-align-center {
+    display: flex;
+    align-items: center;
+}
+
+@mixin bordered($width: 1px, $color: map-get($color, lesser-4)) {
+    border: solid $width $color;
+}
+
+@mixin multiple-line-ellipsis ($line: 3) {
+    /* 多行省略 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $line;
+    line-clamp: $line;
+}
+
+@mixin single-line-ellipsis {
+    /* 單行省略 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

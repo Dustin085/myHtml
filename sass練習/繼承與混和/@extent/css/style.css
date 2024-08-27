@@ -1,0 +1,145 @@
+@charset "UTF-8";
+/* 重置所有標籤的樣式 */
+* {
+  margin: 0;
+  padding: 0;
+  /* 不累加內距padding與邊框border */
+  box-sizing: border-box;
+}
+
+/* 重置字體 */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica, Arial, "蘋方-繁", "PingFang TC", "黑體-繁", "Heiti TC", "微軟正黑體", "Microsoft JhengHei", "Noto Sans TC", sans-serif;
+  font-size: 100%;
+  line-height: 1.5;
+  /* background-color: rgb(175, 207, 191); */
+}
+
+/* 重置標題 */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+
+/* 重置列表 */
+ul,
+ol {
+  list-style: none;
+}
+
+/* 重置圖片 */
+img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+/* 重置連接 */
+a {
+  /* 將預設inline改成block */
+  display: block;
+  text-decoration: none;
+  color: var(--deep);
+}
+
+#topbar .menu, #form--contact input,
+#form--contact textarea, button#btn__contact--submit {
+  /* 玻璃擬態效果 */
+  background-image: linear-gradient(150deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.5));
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.15), inset -1px -1px rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(5px);
+  background-color: rgba(201, 174, 174, 0.25);
+}
+
+.myClass {
+  max-width: 1400px;
+  color: #f2edf0;
+  background-color: rgba(242, 237, 240, 0.2), rgba(236, 240, 244, 0.1);
+}
+.myClass .myChildClass {
+  font-size: 0.85px;
+  font-family: "蘋方-繁", "PingFang TC", "黑體-繁", "Heiti TC", "微軟正黑體", "Microsoft JhengHei", "Noto Sans TC", sans-serif;
+  color: #e6ece5;
+}
+
+/* 頁首區 */
+#topbar {
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px;
+  border: solid 1px #a97f81;
+}
+
+#topbar .menu {
+  text-align: center;
+  flex-direction: column;
+  order: -1;
+  border: solid 1.5px #8f6d6d;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+#form--contact input,
+#form--contact textarea {
+  border: solid 1px #a97f81;
+  width: 100%;
+  padding: 6px;
+  color: #8f6d6d;
+  font-weight: 600;
+  border-radius: 10px;
+  /* 取消表單元素的預設值 */
+  background-color: transparent;
+  border: none;
+}
+
+button#btn__contact--submit {
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  height: 60px;
+  width: 210px;
+}
+
+.my-title {
+  /* 單行省略 */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.my-para {
+  /* 多行省略 */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+  line-clamp: 5;
+}
+
+.my-para2 {
+  /* 多行省略 */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+}/*# sourceMappingURL=style.css.map */

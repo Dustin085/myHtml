@@ -1,0 +1,86 @@
+@use "./reset";
+@use "./variables" as *;
+@use "./funtction" as *;
+// use可以整份檔案內容全部匯入，也可以調用，調用時使用as (ex: as v.);
+// as *，表示直接調用，可以不用寫v.
+
+.myClass {
+    max-width: map-get($max-width, xl);
+    color: map-get($color, primary);
+
+    background: {
+        color: $gradient-b-a;
+    }
+
+    .myChildClass {
+        font: {
+            size: map-get($font-size, s);
+            family: $font-family-tc;
+        }
+
+        color: map-get($color, secondary);
+    }
+}
+
+/* 頁首區 */
+#topbar {
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    @include flex-align-center;
+    justify-content: space-between;
+    padding: 30px;
+    @include bordered($color: map-get($color, lesser-4));
+}
+
+#topbar .menu {
+    @extend %glassmorphism;
+    text-align: center;
+    flex-direction: column;
+    order: -1;
+    @include bordered(1.5px, map-get($color, lesser-5));
+}
+
+section {
+    @include flex-center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+#form--contact input,
+#form--contact textarea {
+    @extend %glassmorphism;
+    @include bordered;
+    width: 100%;
+    padding: 6px;
+    color: map-get($color, lesser-5);
+    font-weight: 600;
+    border-radius: 10px;
+    /* 取消表單元素的預設值 */
+    background-color: transparent;
+    border: none;
+}
+
+
+button#btn__contact--submit {
+    @extend %glassmorphism;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    height: 60px;
+    width: 210px;
+}
+
+.my-title {
+    @include single-line-ellipsis;
+}
+
+.my-para {
+    @include multiple-line-ellipsis(5);
+}
+
+.my-para2 {
+    @include multiple-line-ellipsis(3);
+}
