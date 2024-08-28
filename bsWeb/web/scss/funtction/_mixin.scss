@@ -1,0 +1,51 @@
+@use "../variables" as *;
+
+// mixin會寫在當下的區塊內，而非集中在語法上方
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex-align-center {
+    display: flex;
+    align-items: center;
+}
+
+@mixin bordered-left($width: 5px, $color: map-get($color, dark)) {
+    border-left: $width solid $color;
+}
+
+@mixin multiple-line-ellipsis ($line: 3) {
+    /* 多行省略 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $line;
+    line-clamp: $line;
+}
+
+@mixin single-line-ellipsis {
+    /* 單行省略 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+@mixin masked ($url) {
+    mask: url($url) center/contain no-repeat;
+}
+
+@mixin masked-tilt ($url: "../images/mask.svg") {
+    mask: url($url) center/cover no-repeat;
+    mask-size: 93% 100%;
+
+    @media ($media-md) {
+        mask-size: 90% 100%;
+    }
+
+    @media ($media-lg) {
+        mask-size: 92% 100%;
+    }
+}

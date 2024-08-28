@@ -1,0 +1,95 @@
+@use "./variables" as *;
+@use "./funtction" as *;
+// 套用bootstrap所以不用reset
+
+/* 共用區 */
+img {
+    display: block;
+    width: 100%;
+}
+
+.title {
+    position: relative;
+    @include bordered-left($color: #212529);
+    padding-left: 1.5rem;
+
+    margin: 85px 0 35px;
+
+    &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        left: 5px;
+        bottom: 0px;
+        background-color: map-get($color, dark);
+        // 運算符號前後"一定"要有空格
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+    }
+
+    &::after {
+        // 偽元素存在於內容區
+        content: "";
+        display: block;
+        position: absolute;
+        left: 11.5rem;
+        bottom: 2px;
+        background-color: map-get($color, dark);
+        // 運算符號前後"一定"要有空格
+        width: calc(100% - 11.5rem);
+        height: 3px;
+    }
+
+    h3 {
+        line-height: 1; //bs預設行高為1.2
+
+        span {
+            font: {
+                size: 1rem;
+            }
+        }
+    }
+}
+
+.mask-tilt {
+    @include masked-tilt;
+}
+
+.mask {
+    &.blob-1 {
+        @include masked("../images/blobs-1.svg")
+    }
+
+    &.blob-2 {
+        @include masked("../images/blobs-2.svg")
+    }
+
+    &.blob-3 {
+        @include masked("../images/blobs-3.svg")
+    }
+}
+
+/* 最新商品區 */
+#new {
+    a {
+        position: relative;
+        color: map-get($color, light);
+
+        &:hover {
+            h2 {
+                opacity: 1;
+            }
+        }
+
+        h2 {
+            opacity: 0;
+            transition: .6s;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            @include flex-center;
+            background-color: map-get($color, alpha-b-60);
+        }
+    }
+}
