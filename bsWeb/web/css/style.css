@@ -64,6 +64,32 @@ img {
   mask: url("../images/blobs-3.svg") center/contain no-repeat;
 }
 
+/* banner */
+.carousel .carousel-item {
+  height: calc(100vh - 70px);
+}
+.carousel .carousel-item img {
+  object-fit: cover;
+  height: 100%;
+}
+
+/* 導覽列 */
+.navbar {
+  height: 70px;
+}
+.navbar .container-fluid {
+  height: 100%;
+}
+.navbar .container-fluid .navbar-brand {
+  height: 100%;
+}
+.navbar .container-fluid .navbar-brand img {
+  height: 100%;
+}
+.navbar .search-btn {
+  width: 5rem;
+}
+
 /* 最新商品區 */
 #new a {
   position: relative;
@@ -118,6 +144,37 @@ img {
 }
 
 /* 推薦商品區 */
+#acc .title::after {
+  left: 15rem;
+  width: calc(100% - 15rem);
+}
+
+#tabs {
+  width: 80%;
+  margin: 0 auto;
+}
+#tabs .content {
+  padding: 10px;
+}
+#tabs .content > * {
+  margin-bottom: 1rem;
+}
+#tabs .content h2 {
+  display: inline-block;
+  color: #fffefe;
+  background-color: #121212;
+  padding: 5px 10px;
+  box-shadow: 6px 6px 0 Lime;
+}
+#tabs .content data {
+  display: block;
+}
+#tabs .content mark {
+  font-size: 1.5rem;
+  font-weight: 500;
+  background-color: LawnGreen;
+}
+
 .tab-btn-box {
   display: flex;
 }
@@ -156,4 +213,12 @@ a.ui-button:active,
 }
 .ui-tabs .ui-tabs-panel > div {
   flex: 1;
+}
+
+footer {
+  margin-top: 25px;
+  padding: 25px;
+  text-align: center;
+  background-color: #121212;
+  color: #fffefe;
 }/*# sourceMappingURL=style.css.map */

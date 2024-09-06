@@ -70,6 +70,40 @@ img {
     }
 }
 
+/* banner */
+.carousel {
+    .carousel-item {
+        height: calc(100vh - 70px);
+
+        img {
+            object-fit: cover;
+            height: 100%;
+        }
+    }
+}
+
+/* 導覽列 */
+.navbar {
+    height: 70px;
+
+    .container-fluid {
+        height: 100%;
+
+        .navbar-brand {
+            height: 100%;
+
+            img {
+                height: 100%;
+            }
+        }
+    }
+    .search-btn{
+        // white-space: nowrap;
+        width: 5rem;
+    }
+}
+
+
 /* 最新商品區 */
 #new {
     a {
@@ -142,6 +176,49 @@ img {
 }
 
 /* 推薦商品區 */
+#acc {
+    .title {
+        &::after {
+            left: 15rem;
+            width: calc(100% - 15rem);
+        }
+    }
+}
+
+#tabs {
+    width: 80%;
+    margin: 0 auto;
+
+    .content {
+        padding: map-get($interval, m);
+
+        >* {
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+            display: inline-block;
+            color: map-get($color, light);
+            background-color: map-get($color, dark);
+            padding: map-get($interval, s) map-get($interval, m);
+            box-shadow: $box-shadow-mark;
+        }
+
+        data {
+            display: block;
+        }
+
+        mark {
+            font: {
+                size: map-get($font-size, l);
+                weight: 500;
+            }
+
+            background-color: map-get($color, mark);
+        }
+    }
+}
+
 .tab-btn-box {
     display: flex;
 
@@ -185,4 +262,12 @@ a.ui-button:active,
     >div {
         flex: 1;
     }
+}
+
+footer {
+    margin-top: map-get($interval, xxl);
+    padding: map-get($interval, xxl);
+    text-align: center;
+    background-color: map-get($color, dark);
+    color: map-get($color, light);
 }

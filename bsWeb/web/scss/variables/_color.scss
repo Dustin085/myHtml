@@ -9,6 +9,7 @@ $color: (
     primary: #f2edf0,
     secondary: #e6ece5,
     tertiary: #ecf0f4,
+    mark: LawnGreen,
     // 輔助
     lesser-1: #f3e4e4,
     lesser-2: #efdbdb,
@@ -28,3 +29,4 @@ $color: (
 // 漸層
 // 數列不可列入map，需要獨立一個變數
 $gradient-b-a: rgba(242, 237, 240, 0.2), rgba(236, 240, 244, 0.1);
+$box-shadow-mark: 6px 6px 0  Lime;
