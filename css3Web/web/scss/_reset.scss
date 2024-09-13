@@ -1,0 +1,49 @@
+@use "./variables/" as *;
+
+// 檔案名稱前面加一個底線(_)就不會被編譯成.css
+
+/* 重置所有標籤的樣式 */
+* {
+    margin: 0;
+    padding: 0;
+    /* 不累加內距padding與邊框border */
+    box-sizing: border-box;
+}
+
+/* 重置字體 */
+body {
+    font-family: $font-family-en;
+    font-size: 100%;
+    line-height: 1.5;
+    /* background-color: rgb(175, 207, 191); */
+}
+
+/* 重置標題 */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
+}
+
+/* 重置列表 */
+ul,
+ol {
+    list-style: none;
+}
+
+/* 重置圖片 */
+img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+/* 重置連接 */
+a {
+    /* 將預設inline改成block */
+    text-decoration: none;
+}

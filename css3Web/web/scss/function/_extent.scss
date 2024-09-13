@@ -1,0 +1,22 @@
+@use "../variables" as *;
+
+// 需要另外匯入變數檔案
+// 很多物件共用的樣式可以寫在繼承裡
+// @extend繼承的語法會加在@use語法加入的樣式之後，其他css語法之前
+%glassmorphism {
+    /* 玻璃擬態效果 */
+    background-image: linear-gradient(150deg,
+            map-get($color, alpha-w-15), rgba(255, 255, 255, 0.5));
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.15),
+        inset -1px -1px rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(5px);
+    background-color: map-get($color, alpha-r-25);
+}
+
+// 置中
+%flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+

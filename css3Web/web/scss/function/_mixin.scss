@@ -1,0 +1,69 @@
+@use "../variables" as *;
+
+// mixin會寫在當下的區塊內，而非集中在語法上方
+// @mixin flex-center {
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+// }
+
+@mixin flex-align-center {
+    display: flex;
+    align-items: center;
+}
+
+@mixin bordered($width: 3px, $color: map-get($color, dark)) {
+    border: $width solid $color;
+}
+
+@mixin multiple-line-ellipsis ($line: 3) {
+    /* 多行省略 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $line;
+    line-clamp: $line;
+}
+
+@mixin single-line-ellipsis {
+    /* 單行省略 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+@mixin masked ($url) {
+    mask: url($url) center/contain no-repeat;
+}
+
+@mixin masked-tilt ($url: "../images/mask.svg") {
+    mask: url($url) center/cover no-repeat;
+    mask-size: 93% 100%;
+
+    @media ($media-md) {
+        mask-size: 90% 100%;
+    }
+
+    @media ($media-lg) {
+        mask-size: 92% 100%;
+    }
+}
+
+// 基本按鈕樣式
+@mixin basic-btn {
+    background-color: map-get($color, light);
+    color: map-get($color, dark);
+    font-size: map-get($font-size, xl);
+    font-weight: 600;
+    padding: $interval-m $interval-xxl;
+    border-radius: $radius-full;
+    @include bordered(3px, transparent);
+    transition: map-get($time, hover-transition);
+
+    &:hover {
+        background-color: map-get($color, dark);
+        color: map-get($color, light);
+        @include bordered(3px, map-get($color, primary));
+    }
+}
