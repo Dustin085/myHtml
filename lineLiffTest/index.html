@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LINE LIFF TEST</title>
+</head>
+
+<body>
+    <script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
+    <script>
+        liff.init({
+            liffId: "2006424481-BWa6zeaw",
+            // withLoginOnExternalBrowser: true
+        }).then(() => {
+            console.log(liff.isLoggedIn());  // 判斷開啟此網頁的 LINE 使用者是否為登入狀態
+        });
+    </script>
+    <h1>Hello LIFF!</h1>
+
+</body>
+
+</html>
